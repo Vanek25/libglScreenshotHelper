@@ -1,12 +1,8 @@
 #include "I_TALS.h"
 #include <GLFW/glfw3.h>
 #include <stdio.h>
-#include <sys/types.h>
-#include <dirent.h>
-#include <cstring>
 #include <string>
 #include <ctime>
-#include "FreeImage.h"
 
 void drawQuad(char *typeScreenshot, int width, int height)
 {
