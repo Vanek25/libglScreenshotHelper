@@ -15,12 +15,12 @@
 char *i_tals_createFilename(char *type)
 {       
     time_t t = time(nullptr);
-    tm *now = localtime(&t);
+    tm *dateTimeNow = localtime(&t);
  
     char filename[64];
-    strftime(filename, sizeof(filename), "screenshot_%d-%m-%y_%X.", now);
+    strftime(filename, sizeof(filename), "screenshot_%d-%m-%y_%X.", dateTimeNow);
     
-    char *buffer = new char[std::strlen(filename)+std::strlen(type)+1];
+    char *buffer = new char[strlen(filename) + strlen(type) + 1];
     
     strcpy(buffer, filename);
     strcat(buffer, type);
@@ -67,7 +67,7 @@ void i_tals_takeAndLoadScreenshot(char *type, int width, int height)
 
     FIBITMAP *image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
 
-    char *pathToLoadScreenshot = new char[std::strlen(DEFAULT_PATH)+std::strlen(i_tals_findCatalogUsbName())+std::strlen(i_tals_createFilename(type))];
+    char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(i_tals_findCatalogUsbName()) + strlen(i_tals_createFilename(type))];
 
     strcpy(pathToLoadScreenshot, DEFAULT_PATH);
     strcat(pathToLoadScreenshot, i_tals_findCatalogUsbName());
@@ -82,5 +82,6 @@ void i_tals_takeAndLoadScreenshot(char *type, int width, int height)
     
     FreeImage_Unload(image);
 
-    delete[] pixels;
+    delete pixels;
+    delete pathToLoadScreenshot;
 }
