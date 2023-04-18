@@ -15,7 +15,7 @@
 char *i_tals_createFilename(char *type)
 {       
     time_t t = time(nullptr);
-    tm* now = localtime(&t);
+    tm *now = localtime(&t);
  
     char filename[64];
     strftime(filename, sizeof(filename), "screenshot_%d-%m-%y_%X.", now);
@@ -48,7 +48,8 @@ char *i_tals_findCatalogUsbName()
         }      
     }
 
-    closedir(dirPath); 
+    closedir(dirPath);
+
     char *catalogUsb = new char[std::strlen(catalogName)];
     
     strcpy(catalogUsb, catalogName);
