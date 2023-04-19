@@ -1,16 +1,17 @@
-#define _DEFAULT_SOURCE
+/*#define _DEFAULT_SOURCE
 
-#include "I_TALS.h"
+#include "I_TALS.hpp"
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <dirent.h>
 #include <cstring>
 #include <string>
+#include <cstdint>
 #include <ctime>
 #include "FreeImage.h"
 
-#define DEFAULT_PATH "/home/ivan/media/"
+#define DEFAULT_PATH "/home/neon/media/"
 
 char *i_tals_createFilename(char *type)
 {       
@@ -60,7 +61,7 @@ char *i_tals_findCatalogUsbName()
     return catalogUsb;
 }
 
-void i_tals_takeAndLoadScreenshot(char *type, int width, int height)
+void i_tals_takeAndLoadScreenshot(uint8_t *pixels, char *type, int width, int height)
 {
     BYTE *pixels = new BYTE[3 * width * height];
     glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
@@ -78,10 +79,17 @@ void i_tals_takeAndLoadScreenshot(char *type, int width, int height)
 
     if(type == "bmp") FreeImage_Save(FIF_BMP, image, pathToLoadScreenshot, 0);
     else if(type == "jpg") FreeImage_Save(FIF_JPEG, image, pathToLoadScreenshot, 0);
-    else if(type == "png") FreeImage_Save(FIF_PNG, image, pathToLoadScreenshot, 0);
+    else if(type == "png") FreeImage_Save(FIF_PNG, image, "image.png", 0);
     
     FreeImage_Unload(image);
 
     delete pixels;
     delete pathToLoadScreenshot;
 }
+
+u_int8_t *gtpxls(int width, int height)
+{
+    BYTE *pixels = new BYTE[3 * width * height];
+    glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
+    return pixels;
+}*/
