@@ -1,33 +1,33 @@
-#define _DEFAULT_SOURCE
-
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <dirent.h>
 #include <cstring>
 #include <string>
+#include <cstdint>
 #include <ctime>
-#include "FreeImage.h"
+#include <iostream>
+#include <FreeImage.h>
 
-#define DEFAULT_PATH "/home/ivan/media/"
+#define DEFAULT_PATH "/home/ivan/media"
 
-char *i_tals_createFilename(char *type)
-{       
+static char *i_tals_createFileName(const char *type)
+{
     time_t t = time(nullptr);
     tm *dateTimeNow = localtime(&t);
- 
-    char filename[64];
-    strftime(filename, sizeof(filename), "screenshot_%d-%m-%y_%X.", dateTimeNow);
-    
-    char *buffer = new char[strlen(filename) + strlen(type) + 1];
-    
-    strcpy(buffer, filename);
-    strcat(buffer, type);
-    
-    return buffer;
+
+    char shrtFileName[64];
+    strftime(shrtFileName, sizeof(shrtFileName), "screenshot_%d-%m-%y_%X.", dateTimeNow);
+
+    char *fileName = new char[strlen(shrtFileName) + strlen(type) + 1];
+
+    strcpy(fileName, shrtFileName);
+    strcat(fileName, type);
+
+    return fileName;
 }
 
-char *i_tals_findCatalogUsbName()
+static char *i_tals_findCatalogUsbName()
 {
     int catalogsCount = 0;
     char catalogName[255];
@@ -36,57 +36,90 @@ char *i_tals_findCatalogUsbName()
     struct dirent *entry;
     dirPath = opendir(DEFAULT_PATH);
 
-    while ((entry = readdir (dirPath)) != NULL)
+    if (dirPath == NULL)
+    {
+        std::cerr << "[E] Не удалось открыть каталог [ " << DEFAULT_PATH << " ]!" << std::endl;
+        return nullptr;
+    }
+
+    while ((entry = readdir(dirPath)) != NULL)
     {
         if (entry->d_type == DT_DIR && strcmp(entry->d_name, "..") && strcmp(entry->d_name, "."))
         {
             catalogsCount++;
             strncpy(catalogName, entry->d_name, 254);
             catalogName[254] = '\0';
-            printf("%s\n", catalogName);
-        }      
+        }
+    }
+
+    if(catalogsCount == 0)
+    {
+        std::cerr << "[E] Не обнаружен каталог USB накопителя! Каталог [ " << DEFAULT_PATH << " ] пуст!" << std::endl;
+        return nullptr;
+    }
+
+    if(catalogsCount > 1)
+    {
+        std::cout << "Найдено более одного раздела USB накопителя. Скриншот будет помещен в каталог [ " << catalogName << " ] " << std::endl;
     }
 
     closedir(dirPath);
 
-    char *catalogUsb = new char[std::strlen(catalogName)];
-    
-    strcpy(catalogUsb, catalogName);
+    char *catalogUsb = new char[std::strlen(catalogName) + 1];
+
+    strcpy(catalogUsb, "/");
+    strcat(catalogUsb, catalogName);
     strcat(catalogUsb, "/");
 
-    catalogsCount != 0 ? printf("\nThere %d directory in the current directory.\n", catalogsCount) :  printf("\nUSB not found!\nEnter USB and try again\n");
+    delete[] entry;
 
     return catalogUsb;
 }
 
-void i_tals_takeAndLoadScreenshot(char *type, int width, int height)
+static void takeAndLoadScreenshot(const char *type, int width, int height)
 {
+    if ((strcmp(type, "bmp")) != 0 && (strcmp(type, "jpg")) != 0 && (strcmp(type, "png")) != 0)
+    {
+        std::cerr << "[E] Тип [ " << type << " ] не может быть использован!" << std::endl;
+        return throw;
+    }
+
+    char *catalogUsbName = i_tals_findCatalogUsbName();
+    char *fileName = i_tals_createFileName(type);
+
     BYTE *pixels = new BYTE[3 * width * height];
     glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
 
     FIBITMAP *image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
+    if(image == NULL)
+    {
+        std::cerr << "[E] Не удалось сконвертировать необработанное растровое изображение в растровое изображение!" << std::endl;
+        return throw;
+    }
 
-    char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(i_tals_findCatalogUsbName()) + strlen(i_tals_createFilename(type))];
+    char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(catalogUsbName) + strlen(fileName)];
 
     strcpy(pathToLoadScreenshot, DEFAULT_PATH);
-    strcat(pathToLoadScreenshot, i_tals_findCatalogUsbName());
-    strcat(pathToLoadScreenshot, i_tals_createFilename(type));
+    strcat(pathToLoadScreenshot, catalogUsbName);
+    strcat(pathToLoadScreenshot, fileName);
 
-    printf(pathToLoadScreenshot);
-    printf("\n");
+    if(!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
+    {
+        std::cerr << "[E] Не удалось сохранить скриншот. Тип файла "<< fileName <<" [ "<< FreeImage_GetFIFFromFilename(fileName) << " ] не определен!" << std::endl;
+        return throw;
+    }
 
-    if(type == "bmp") FreeImage_Save(FIF_BMP, image, pathToLoadScreenshot, 0);
-    else if(type == "jpg") FreeImage_Save(FIF_JPEG, image, pathToLoadScreenshot, 0);
-    else if(type == "png") FreeImage_Save(FIF_PNG, image, pathToLoadScreenshot, 0);
-    
+    FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);
     FreeImage_Unload(image);
 
-    delete pixels;
-    delete pathToLoadScreenshot;
+    delete[] catalogUsbName;
+    delete[] fileName;
+    delete[] pixels;
+    delete[] pathToLoadScreenshot;
 }
 
 
-void drawQuad(char *typeScreenshot, int width, int height)
+void drawQuad(const char *typeScreenshot, int width, int height)
 {
     GLFWwindow *window;
     
@@ -177,16 +210,19 @@ void drawQuad(char *typeScreenshot, int width, int height)
             glVertex2f(0.4f, 0.0f);
         glEnd();
 
-        if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) i_tals_takeAndLoadScreenshot(typeScreenshot, 1000, 700);
+        if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) takeAndLoadScreenshot(typeScreenshot, 1000, 700);
 
-        if(glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS) i_tals_takeAndLoadScreenshot("bmp", 1000, 700);
-
-        if(glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS) i_tals_takeAndLoadScreenshot("png", 1000, 700);
-
-        if(glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS) i_tals_takeAndLoadScreenshot("jpg", 1000, 700);
         
+        if(glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS) takeAndLoadScreenshot("bmp", 1000, 700);
+
+        if(glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS) takeAndLoadScreenshot("png", 1000, 700);
+
+        if(glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS) takeAndLoadScreenshot("jpg", 1000, 700);
+        
+       
         glfwSwapBuffers(window);
         glfwPollEvents();
+        
     }
 
     glfwTerminate();
@@ -195,7 +231,7 @@ void drawQuad(char *typeScreenshot, int width, int height)
 int main()
 {
     drawQuad("png", 1000, 700);
-    
+
     return 0;
 }
 
