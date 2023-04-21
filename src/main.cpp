@@ -9,7 +9,8 @@
 #include <iostream>
 #include <FreeImage.h>
 
-#define DEFAULT_PATH "/home/ivan/media"
+#define VNIIFTRI_DEBUG true
+#define DEFAULT_PATH "/home/neon/ds"  
 
 static char *i_tals_createFileName(const char *type)
 {
@@ -38,7 +39,7 @@ static char *i_tals_findCatalogUsbName()
 
     if (dirPath == NULL)
     {
-        std::cerr << "[E] Не удалось открыть каталог [ " << DEFAULT_PATH << " ]!" << std::endl;
+        if(VNIIFTRI_DEBUG)std::cerr << "[E] Не удалось открыть каталог [ " << DEFAULT_PATH << " ]!" << std::endl;
         return nullptr;
     }
 
@@ -54,13 +55,13 @@ static char *i_tals_findCatalogUsbName()
 
     if(catalogsCount == 0)
     {
-        std::cerr << "[E] Не обнаружен каталог USB накопителя! Каталог [ " << DEFAULT_PATH << " ] пуст!" << std::endl;
+        if(VNIIFTRI_DEBUG)std::cerr << "[E] Не обнаружен каталог USB накопителя! Каталог [ " << DEFAULT_PATH << " ] пуст!" << std::endl;
         return nullptr;
     }
 
     if(catalogsCount > 1)
     {
-        std::cout << "Найдено более одного раздела USB накопителя. Скриншот будет помещен в каталог [ " << catalogName << " ] " << std::endl;
+        if(VNIIFTRI_DEBUG)std::cout << "Найдено более одного раздела USB накопителя. Скриншот будет помещен в каталог [ " << catalogName << " ] " << std::endl;
     }
 
     closedir(dirPath);
@@ -80,12 +81,17 @@ static void takeAndLoadScreenshot(const char *type, int width, int height)
 {
     if ((strcmp(type, "bmp")) != 0 && (strcmp(type, "jpg")) != 0 && (strcmp(type, "png")) != 0)
     {
-        std::cerr << "[E] Тип [ " << type << " ] не может быть использован!" << std::endl;
+        if(VNIIFTRI_DEBUG)std::cerr << "[E] Тип [ " << type << " ] не может быть использован!" << std::endl;
         return throw;
     }
 
     char *catalogUsbName = i_tals_findCatalogUsbName();
     char *fileName = i_tals_createFileName(type);
+
+    if(catalogUsbName == NULL || fileName == NULL)
+    {
+        return throw;
+    }
 
     BYTE *pixels = new BYTE[3 * width * height];
     glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
@@ -93,7 +99,7 @@ static void takeAndLoadScreenshot(const char *type, int width, int height)
     FIBITMAP *image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
     if(image == NULL)
     {
-        std::cerr << "[E] Не удалось сконвертировать необработанное растровое изображение в растровое изображение!" << std::endl;
+        if(VNIIFTRI_DEBUG)std::cerr << "[E] Не удалось сконвертировать необработанное растровое изображение в растровое изображение!" << std::endl;
         return throw;
     }
 
@@ -105,7 +111,7 @@ static void takeAndLoadScreenshot(const char *type, int width, int height)
 
     if(!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
     {
-        std::cerr << "[E] Не удалось сохранить скриншот. Тип файла "<< fileName <<" [ "<< FreeImage_GetFIFFromFilename(fileName) << " ] не определен!" << std::endl;
+        if(VNIIFTRI_DEBUG)std::cerr << "[E] Не удалось сохранить скриншот. Тип файла "<< fileName <<" [ "<< FreeImage_GetFIFFromFilename(fileName) << " ] не определен!" << std::endl;
         return throw;
     }
 
@@ -212,17 +218,14 @@ void drawQuad(const char *typeScreenshot, int width, int height)
 
         if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) takeAndLoadScreenshot(typeScreenshot, 1000, 700);
 
-        
         if(glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS) takeAndLoadScreenshot("bmp", 1000, 700);
 
         if(glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS) takeAndLoadScreenshot("png", 1000, 700);
 
         if(glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS) takeAndLoadScreenshot("jpg", 1000, 700);
-        
        
         glfwSwapBuffers(window);
         glfwPollEvents();
-        
     }
 
     glfwTerminate();
