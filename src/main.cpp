@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <ctime>
 #include <iostream>
+#include <vector>
 #include <FreeImage.h>
 
 #define VNIIFTRI_DEBUG
@@ -17,7 +18,7 @@
 #define D(TYPE, MESSAGE, VALUE)
 #endif
 
-#define DEFAULT_PATH "/home/neon/media"
+#define DEFAULT_PATH "/home/linux/media"
 
 static char *i_tals_createFileName(const char *type)
 {
@@ -35,10 +36,12 @@ static char *i_tals_createFileName(const char *type)
     return fileName;
 }
 
-static char *i_tals_findCatalogUsbName()
+static std::vector<std::string> i_tals_findCatalogUsbName()
 {
     int catalogsCount = 0;
     char catalogName[255];
+
+    std::vector<std::string> catalogNameVec;
 
     DIR *dirPath;
     struct dirent *entry;
@@ -55,8 +58,11 @@ static char *i_tals_findCatalogUsbName()
         if (entry->d_type == DT_DIR && strcmp(entry->d_name, "..") && strcmp(entry->d_name, "."))
         {
             catalogsCount++;
-            strncpy(catalogName, entry->d_name, 254);
+            strcpy(catalogName, "/");
+            strncat(catalogName, entry->d_name, 254);
+            strcat(catalogName, "/");
             catalogName[254] = '\0';
+            catalogNameVec.push_back(catalogName);
         }
     }
 
@@ -73,15 +79,9 @@ static char *i_tals_findCatalogUsbName()
 
     closedir(dirPath);
 
-    char *catalogUsb = new char[std::strlen(catalogName) + 1];
-
-    strcpy(catalogUsb, "/");
-    strcat(catalogUsb, catalogName);
-    strcat(catalogUsb, "/");
-
     delete[] entry;
 
-    return catalogUsb;
+    return catalogNameVec;
 }
 
 static void takeAndLoadScreenshot(const char *type, int width, int height)
@@ -91,11 +91,11 @@ static void takeAndLoadScreenshot(const char *type, int width, int height)
         D("[E]", "Неверный тип скриншота: ", type);
         throw "BAD";  
     }
-    
-    char *catalogUsbName = i_tals_findCatalogUsbName();
+
+    std::vector<std::string> catalogUsbNameVec = i_tals_findCatalogUsbName();
     char *fileName = i_tals_createFileName(type);
 
-    if (catalogUsbName == NULL || fileName == NULL)
+    if (catalogUsbNameVec.empty() || fileName == NULL)
     {
         throw nullptr;
     }
@@ -109,25 +109,28 @@ static void takeAndLoadScreenshot(const char *type, int width, int height)
          D("[E]", "Не удалось сконвертировать необработанное растровое изображение в растровое изображение!", "");   
     }
 
-    char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(catalogUsbName) + strlen(fileName)];
-
-    strcpy(pathToLoadScreenshot, DEFAULT_PATH);
-    strcat(pathToLoadScreenshot, catalogUsbName);
-    strcat(pathToLoadScreenshot, fileName);
-
-    if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
+    for(std::vector<int>::size_type i = 0; i < catalogUsbNameVec.size(); i++)
     {
-        D("[E]", "Не удалось сохранить скриншот! Неопределенный тип: ", FreeImage_GetFIFFromFilename(fileName));
-        throw fileName;
-    }
+        char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(catalogUsbNameVec[i].c_str()) + strlen(fileName)];
 
-    FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);
+        strcpy(pathToLoadScreenshot, DEFAULT_PATH);
+        strcat(pathToLoadScreenshot, catalogUsbNameVec[i].c_str());
+        strcat(pathToLoadScreenshot, fileName);
+
+        if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
+        {
+            D("[E]", "Не удалось сохранить скриншот! Неопределенный тип: ", FreeImage_GetFIFFromFilename(fileName));
+            throw fileName;
+        }
+
+        FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);
+        delete[] pathToLoadScreenshot;
+    }
+    
     FreeImage_Unload(image);
 
-    delete[] catalogUsbName;
     delete[] fileName;
-    delete[] pixels;
-    delete[] pathToLoadScreenshot;
+    delete[] pixels; 
 }
 
 void drawQuad(const char *typeScreenshot, int width, int height)
@@ -242,7 +245,7 @@ void drawQuad(const char *typeScreenshot, int width, int height)
 
 int main()
 {
-    drawQuad("pmg", 1000, 700);
+    drawQuad("png", 1000, 700);
 
     return 0;
 }
