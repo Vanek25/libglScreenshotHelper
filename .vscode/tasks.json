@@ -8,6 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "main.cpp",
+                "glScreenshotHelper.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-lGL",

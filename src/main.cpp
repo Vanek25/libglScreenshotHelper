@@ -9,134 +9,14 @@
 #include <iostream>
 #include <vector>
 #include <FreeImage.h>
-
-#define VNIIFTRI_DEBUG
-
-#ifdef VNIIFTRI_DEBUG
-#define D(TYPE, MESSAGE, VALUE) std::cerr<< TYPE << " I_TALS: " << MESSAGE << VALUE << std::endl
-#else
-#define D(TYPE, MESSAGE, VALUE)
-#endif
-
-#define DEFAULT_PATH "/home/linux/media"
-
-static char *i_tals_createFileName(const char *type)
-{
-    time_t t = time(nullptr);
-    tm *dateTimeNow = localtime(&t);
-
-    char shrtFileName[64];
-    strftime(shrtFileName, sizeof(shrtFileName), "screenshot_%d-%m-%y_%X.", dateTimeNow);
-
-    char *fileName = new char[strlen(shrtFileName) + strlen(type) + 1];
-
-    strcpy(fileName, shrtFileName);
-    strcat(fileName, type);
-
-    return fileName;
-}
-
-static std::vector<std::string> i_tals_findCatalogUsbName()
-{
-    int catalogsCount = 0;
-    char catalogName[255];
-
-    std::vector<std::string> catalogNameVec;
-
-    DIR *dirPath;
-    struct dirent *entry;
-    dirPath = opendir(DEFAULT_PATH);
-
-    if (dirPath == NULL)
-    {
-        D("[E]", "Не удалось открыть каталог куда монируется USB накопитель! Путь указывает на несуществующий каталог: ", DEFAULT_PATH);
-        throw nullptr;
-    }
-
-    while ((entry = readdir(dirPath)) != NULL)
-    {
-        if (entry->d_type == DT_DIR && strcmp(entry->d_name, "..") && strcmp(entry->d_name, "."))
-        {
-            catalogsCount++;
-            strcpy(catalogName, "/");
-            strncat(catalogName, entry->d_name, 254);
-            strcat(catalogName, "/");
-            catalogName[254] = '\0';
-            catalogNameVec.push_back(catalogName);
-        }
-    }
-
-    if (catalogsCount == 0)
-    {
-        D("[E]", "Не обнаружен каталог USB накопителя! Проверьте исправность USB накопителя.","");
-        throw "-1";
-    }
-
-    if (catalogsCount > 1)
-    {
-        D("[W]", "Найдено более одного раздела USB накопителя.", ""); 
-    }
-
-    closedir(dirPath);
-
-    delete[] entry;
-
-    return catalogNameVec;
-}
-
-static void takeAndLoadScreenshot(const char *type, int width, int height)
-{
-    if ((strcmp(type, "bmp")) != 0 && (strcmp(type, "jpg")) != 0 && (strcmp(type, "png")) != 0)
-    {
-        D("[E]", "Неверный тип скриншота: ", type);
-        throw "BAD";  
-    }
-
-    std::vector<std::string> catalogUsbNameVec = i_tals_findCatalogUsbName();
-    char *fileName = i_tals_createFileName(type);
-
-    if (catalogUsbNameVec.empty() || fileName == NULL)
-    {
-        throw nullptr;
-    }
-
-    BYTE *pixels = new BYTE[3 * width * height];
-    glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
-
-    FIBITMAP *image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
-    if (image == NULL)
-    {
-         D("[E]", "Не удалось сконвертировать необработанное растровое изображение в растровое изображение!", "");   
-    }
-
-    for(std::vector<int>::size_type i = 0; i < catalogUsbNameVec.size(); i++)
-    {
-        char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(catalogUsbNameVec[i].c_str()) + strlen(fileName)];
-
-        strcpy(pathToLoadScreenshot, DEFAULT_PATH);
-        strcat(pathToLoadScreenshot, catalogUsbNameVec[i].c_str());
-        strcat(pathToLoadScreenshot, fileName);
-
-        if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
-        {
-            D("[E]", "Не удалось сохранить скриншот! Неопределенный тип: ", FreeImage_GetFIFFromFilename(fileName));
-            throw fileName;
-        }
-
-        FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);
-        delete[] pathToLoadScreenshot;
-    }
-    
-    FreeImage_Unload(image);
-
-    delete[] fileName;
-    delete[] pixels; 
-}
+#include "include/glScreenshotHelper.h"
 
 void drawQuad(const char *typeScreenshot, int width, int height)
 {
-    GLFWwindow *window;
+    ScreenshotHelper shelper;
 
+    GLFWwindow *window;
+    
     if (!glfwInit())
         return;
 
@@ -225,16 +105,16 @@ void drawQuad(const char *typeScreenshot, int width, int height)
         glEnd();
 
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-            takeAndLoadScreenshot(typeScreenshot, 1000, 700);
+            shelper.takeAndLoadScreenshot(typeScreenshot, 1000, 700);
 
         if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
-            takeAndLoadScreenshot("bmp", 1000, 700);
+            shelper.takeAndLoadScreenshot("bmp", 1000, 700);
 
         if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
-            takeAndLoadScreenshot("png", 1000, 700);
+            shelper.takeAndLoadScreenshot("png", 1000, 700);
 
         if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-            takeAndLoadScreenshot("jpg", 1000, 700);
+            shelper.takeAndLoadScreenshot("jpg", 1000, 700);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -246,6 +126,7 @@ void drawQuad(const char *typeScreenshot, int width, int height)
 int main()
 {
     drawQuad("png", 1000, 700);
+    
 
     return 0;
 }

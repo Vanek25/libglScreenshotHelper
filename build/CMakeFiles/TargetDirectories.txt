@@ -1,0 +1,3 @@
+/home/linux/projects/tals/build/CMakeFiles/tals-exp2.dir
+/home/linux/projects/tals/build/CMakeFiles/edit_cache.dir
+/home/linux/projects/tals/build/CMakeFiles/rebuild_cache.dir
