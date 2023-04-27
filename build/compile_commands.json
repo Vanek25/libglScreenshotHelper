@@ -1,12 +1,12 @@
 [
 {
   "directory": "/home/linux/projects/tals/build",
-  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/tals-exp2.dir/src/main.cpp.o -c /home/linux/projects/tals/src/main.cpp",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/tals.dir/src/main.cpp.o -c /home/linux/projects/tals/src/main.cpp",
   "file": "/home/linux/projects/tals/src/main.cpp"
 },
 {
   "directory": "/home/linux/projects/tals/build",
-  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/tals-exp2.dir/src/glScreenshotHelper.cpp.o -c /home/linux/projects/tals/src/glScreenshotHelper.cpp",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o -c /home/linux/projects/tals/src/glScreenshotHelper.cpp",
   "file": "/home/linux/projects/tals/src/glScreenshotHelper.cpp"
 }
 ]

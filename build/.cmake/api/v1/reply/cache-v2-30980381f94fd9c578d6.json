@@ -155,10 +155,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/g++"
 		},
 		{
@@ -719,7 +719,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "tals-exp2"
+			"value" : "tals"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1191,6 +1191,42 @@
 		},
 		{
 			"name" : "tals-exp2_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/linux/projects/tals"
+		},
+		{
+			"name" : "tals_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/linux/projects/tals/build"
+		},
+		{
+			"name" : "tals_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "tals_SOURCE_DIR",
 			"properties" : 
 			[
 				{

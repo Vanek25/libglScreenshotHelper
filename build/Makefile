@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tals-exp2
+# Target rules for targets named tals
 
 # Build rule for target.
-tals-exp2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tals-exp2
-.PHONY : tals-exp2
+tals: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tals
+.PHONY : tals
 
 # fast build rule for target.
-tals-exp2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/build
-.PHONY : tals-exp2/fast
+tals/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/build
+.PHONY : tals/fast
 
 src/glScreenshotHelper.o: src/glScreenshotHelper.cpp.o
 .PHONY : src/glScreenshotHelper.o
 
 # target to build an object file
 src/glScreenshotHelper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/src/glScreenshotHelper.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o
 .PHONY : src/glScreenshotHelper.cpp.o
 
 src/glScreenshotHelper.i: src/glScreenshotHelper.cpp.i
@@ -142,7 +142,7 @@ src/glScreenshotHelper.i: src/glScreenshotHelper.cpp.i
 
 # target to preprocess a source file
 src/glScreenshotHelper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/src/glScreenshotHelper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.i
 .PHONY : src/glScreenshotHelper.cpp.i
 
 src/glScreenshotHelper.s: src/glScreenshotHelper.cpp.s
@@ -150,7 +150,7 @@ src/glScreenshotHelper.s: src/glScreenshotHelper.cpp.s
 
 # target to generate assembly for a file
 src/glScreenshotHelper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/src/glScreenshotHelper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.s
 .PHONY : src/glScreenshotHelper.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -158,7 +158,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -166,7 +166,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -174,7 +174,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... tals-exp2"
+	@echo "... tals"
 	@echo "... src/glScreenshotHelper.o"
 	@echo "... src/glScreenshotHelper.i"
 	@echo "... src/glScreenshotHelper.s"

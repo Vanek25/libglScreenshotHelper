@@ -1,15 +1,5 @@
 #include <GLFW/glfw3.h>
-#include <stdio.h>
-#include <sys/types.h>
-#include <dirent.h>
-#include <cstring>
-#include <string>
-#include <cstdint>
-#include <ctime>
-#include <iostream>
-#include <vector>
-#include <FreeImage.h>
-#include "include/glScreenshotHelper.h"
+#include "../include/glScreenshotHelper.h"
 
 void drawQuad(const char *typeScreenshot, int width, int height)
 {
@@ -109,7 +99,7 @@ void drawQuad(const char *typeScreenshot, int width, int height)
 
         if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
             shelper.takeAndLoadScreenshot("bmp", 1000, 700);
-
+ 
         if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
             shelper.takeAndLoadScreenshot("png", 1000, 700);
 

@@ -9,7 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <FreeImage.h>
-#include "include/glScreenshotHelper.h"
+#include "../include/glScreenshotHelper.h"
 
 #define VNIIFTRI_DEBUG
 

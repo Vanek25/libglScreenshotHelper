@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/linux/projects/tals/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/tals-exp2.dir/all
+all: CMakeFiles/tals.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/tals-exp2.dir/clean
+clean: CMakeFiles/tals.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/tals-exp2.dir
+# Target rules for target CMakeFiles/tals.dir
 
 # All Build rule for target.
-CMakeFiles/tals-exp2.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/linux/projects/tals/build/CMakeFiles --progress-num=1,2,3 "Built target tals-exp2"
-.PHONY : CMakeFiles/tals-exp2.dir/all
+CMakeFiles/tals.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/linux/projects/tals/build/CMakeFiles --progress-num=1,2,3 "Built target tals"
+.PHONY : CMakeFiles/tals.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/tals-exp2.dir/rule: cmake_check_build_system
+CMakeFiles/tals.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/linux/projects/tals/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tals-exp2.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tals.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/linux/projects/tals/build/CMakeFiles 0
-.PHONY : CMakeFiles/tals-exp2.dir/rule
+.PHONY : CMakeFiles/tals.dir/rule
 
 # Convenience name for target.
-tals-exp2: CMakeFiles/tals-exp2.dir/rule
-.PHONY : tals-exp2
+tals: CMakeFiles/tals.dir/rule
+.PHONY : tals
 
 # clean rule for target.
-CMakeFiles/tals-exp2.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals-exp2.dir/build.make CMakeFiles/tals-exp2.dir/clean
-.PHONY : CMakeFiles/tals-exp2.dir/clean
+CMakeFiles/tals.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/clean
+.PHONY : CMakeFiles/tals.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

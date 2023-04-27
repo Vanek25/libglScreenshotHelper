@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "tals-exp2",
+					"name" : "tals",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "tals-exp2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-tals-exp2-Debug-ffec597443d0bb496b44.json",
-					"name" : "tals-exp2",
+					"id" : "tals::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tals-Debug-39890ad82ecf48d70f75.json",
+					"name" : "tals",
 					"projectIndex" : 0
 				}
 			]
