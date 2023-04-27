@@ -69,44 +69,44 @@ include CMakeFiles/tals.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tals.dir/flags.make
 
-CMakeFiles/tals.dir/src/main.cpp.o: CMakeFiles/tals.dir/flags.make
-CMakeFiles/tals.dir/src/main.cpp.o: ../src/main.cpp
-CMakeFiles/tals.dir/src/main.cpp.o: CMakeFiles/tals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/projects/tals/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tals.dir/src/main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tals.dir/src/main.cpp.o -MF CMakeFiles/tals.dir/src/main.cpp.o.d -o CMakeFiles/tals.dir/src/main.cpp.o -c /home/linux/projects/tals/src/main.cpp
+CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o: CMakeFiles/tals.dir/flags.make
+CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o: ../libglScreenshotHelper/src/main.cpp
+CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o: CMakeFiles/tals.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/projects/tals/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o -MF CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o.d -o CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o -c /home/linux/projects/tals/libglScreenshotHelper/src/main.cpp
 
-CMakeFiles/tals.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tals.dir/src/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/projects/tals/src/main.cpp > CMakeFiles/tals.dir/src/main.cpp.i
+CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/projects/tals/libglScreenshotHelper/src/main.cpp > CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.i
 
-CMakeFiles/tals.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tals.dir/src/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/projects/tals/src/main.cpp -o CMakeFiles/tals.dir/src/main.cpp.s
+CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/projects/tals/libglScreenshotHelper/src/main.cpp -o CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.s
 
-CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o: CMakeFiles/tals.dir/flags.make
-CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o: ../src/glScreenshotHelper.cpp
-CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o: CMakeFiles/tals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/projects/tals/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o -MF CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o.d -o CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o -c /home/linux/projects/tals/src/glScreenshotHelper.cpp
+CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o: CMakeFiles/tals.dir/flags.make
+CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o: ../libglScreenshotHelper/src/glScreenshotHelper.cpp
+CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o: CMakeFiles/tals.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/projects/tals/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o -MF CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o.d -o CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o -c /home/linux/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp
 
-CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/projects/tals/src/glScreenshotHelper.cpp > CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.i
+CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp > CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.i
 
-CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/projects/tals/src/glScreenshotHelper.cpp -o CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.s
+CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp -o CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.s
 
 # Object files for target tals
 tals_OBJECTS = \
-"CMakeFiles/tals.dir/src/main.cpp.o" \
-"CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o"
+"CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o" \
+"CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o"
 
 # External object files for target tals
 tals_EXTERNAL_OBJECTS =
 
-tals: CMakeFiles/tals.dir/src/main.cpp.o
-tals: CMakeFiles/tals.dir/src/glScreenshotHelper.cpp.o
+tals: CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o
+tals: CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o
 tals: CMakeFiles/tals.dir/build.make
 tals: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 tals: /usr/lib/x86_64-linux-gnu/libGLX.so

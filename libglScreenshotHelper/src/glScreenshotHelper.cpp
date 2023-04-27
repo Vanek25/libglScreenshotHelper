@@ -19,7 +19,7 @@
 #define D(TYPE, MESSAGE, VALUE)
 #endif
 
-#define DEFAULT_PATH "/home/neon/media"
+#define DEFAULT_PATH "/home/linux/media"
 
 char *ScreenshotHelper::i_tals_createFileName(const char *type)
 {
@@ -120,7 +120,7 @@ void ScreenshotHelper::takeAndLoadScreenshot(const char *type, int width, int he
 
         if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
         {
-            D("[E]", "Не удалось сохранить скриншот! Неопределенный тип: ", FreeImage_GetFIFFromFilename(fileName));
+            D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для каталога ", FreeImage_GetFIFFromFilename(fileName));
             throw fileName;
         }
 
