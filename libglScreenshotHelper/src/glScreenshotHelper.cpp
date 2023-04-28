@@ -19,7 +19,7 @@
 #define D(TYPE, MESSAGE, VALUE)
 #endif
 
-#define DEFAULT_PATH "/home/linux/media"
+#define DEFAULT_PATH "/home/neon/media"
 
 char *ScreenshotHelper::i_tals_createFileName(const char *type)
 {

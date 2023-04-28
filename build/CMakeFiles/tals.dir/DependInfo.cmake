@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/neon/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp" "CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o" "gcc" "CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o.d"
   "/home/neon/projects/tals/libglScreenshotHelper/src/main.cpp" "CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o" "gcc" "CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o.d"
   )
 

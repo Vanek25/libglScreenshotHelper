@@ -1166,18 +1166,6 @@
 			"value" : "[TRUE][v()]"
 		},
 		{
-			"name" : "LIB",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "/home/neon/projects/tals/libglScreenshotHelper/src/libglScreenshotHelper.a"
-		},
-		{
 			"name" : "LIB_freeimage",
 			"properties" : 
 			[

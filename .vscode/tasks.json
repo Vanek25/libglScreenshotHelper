@@ -18,7 +18,8 @@
                 "-lXrandr",
                 "-lpthread",
                 "-lXi",
-                "-lfreeimage"
+                "-lfreeimage",
+                "-lcppunit"
             ],
             "options": {
                 "cwd": "${fileDirname}"

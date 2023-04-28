@@ -142,6 +142,30 @@ tals/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/build
 .PHONY : tals/fast
 
+libglScreenshotHelper/src/glScreenshotHelper.o: libglScreenshotHelper/src/glScreenshotHelper.cpp.o
+.PHONY : libglScreenshotHelper/src/glScreenshotHelper.o
+
+# target to build an object file
+libglScreenshotHelper/src/glScreenshotHelper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o
+.PHONY : libglScreenshotHelper/src/glScreenshotHelper.cpp.o
+
+libglScreenshotHelper/src/glScreenshotHelper.i: libglScreenshotHelper/src/glScreenshotHelper.cpp.i
+.PHONY : libglScreenshotHelper/src/glScreenshotHelper.i
+
+# target to preprocess a source file
+libglScreenshotHelper/src/glScreenshotHelper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.i
+.PHONY : libglScreenshotHelper/src/glScreenshotHelper.cpp.i
+
+libglScreenshotHelper/src/glScreenshotHelper.s: libglScreenshotHelper/src/glScreenshotHelper.cpp.s
+.PHONY : libglScreenshotHelper/src/glScreenshotHelper.s
+
+# target to generate assembly for a file
+libglScreenshotHelper/src/glScreenshotHelper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.s
+.PHONY : libglScreenshotHelper/src/glScreenshotHelper.cpp.s
+
 libglScreenshotHelper/src/main.o: libglScreenshotHelper/src/main.cpp.o
 .PHONY : libglScreenshotHelper/src/main.o
 
@@ -176,6 +200,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... glScreenshotHelper"
 	@echo "... tals"
+	@echo "... libglScreenshotHelper/src/glScreenshotHelper.o"
+	@echo "... libglScreenshotHelper/src/glScreenshotHelper.i"
+	@echo "... libglScreenshotHelper/src/glScreenshotHelper.s"
 	@echo "... libglScreenshotHelper/src/main.o"
 	@echo "... libglScreenshotHelper/src/main.i"
 	@echo "... libglScreenshotHelper/src/main.s"
