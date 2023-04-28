@@ -1,3 +1,7 @@
+file(REMOVE_RECURSE
+  "libglScreenshotHelper.a"
+  "libglScreenshotHelper.pdb"
+)
 
 # Per-language clean rules from dependency scanning.
 foreach(lang )

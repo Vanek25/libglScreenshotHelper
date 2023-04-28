@@ -1,0 +1,2 @@
+/usr/bin/ar qc libglSH.a 
+/usr/bin/ranlib libglSH.a

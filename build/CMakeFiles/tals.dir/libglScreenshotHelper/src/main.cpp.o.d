@@ -1,6 +1,6 @@
 CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o: \
- /home/linux/projects/tals/libglScreenshotHelper/src/main.cpp \
- /usr/include/stdc-predef.h /usr/include/GLFW/glfw3.h \
+ /home/neon/projects/tals/libglScreenshotHelper/src/main.cpp \
+ /usr/include/stdc-predef.h /usr/local/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -18,7 +18,7 @@ CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/GL/gl.h \
  /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
- /home/linux/projects/tals/libglScreenshotHelper/src/../include/glScreenshotHelper.h \
+ /home/neon/projects/tals/libglScreenshotHelper/src/../include/glScreenshotHelper.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

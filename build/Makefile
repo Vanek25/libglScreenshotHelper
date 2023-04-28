@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/linux/projects/tals
+CMAKE_SOURCE_DIR = /home/neon/projects/tals
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/linux/projects/tals/build
+CMAKE_BINARY_DIR = /home/neon/projects/tals/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/linux/projects/tals/build/CMakeFiles /home/linux/projects/tals/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/neon/projects/tals/build/CMakeFiles /home/neon/projects/tals/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/linux/projects/tals/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/neon/projects/tals/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named glScreenshotHelper
+
+# Build rule for target.
+glScreenshotHelper: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glScreenshotHelper
+.PHONY : glScreenshotHelper
+
+# fast build rule for target.
+glScreenshotHelper/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glScreenshotHelper.dir/build.make CMakeFiles/glScreenshotHelper.dir/build
+.PHONY : glScreenshotHelper/fast
+
+#=============================================================================
 # Target rules for targets named tals
 
 # Build rule for target.
@@ -128,30 +141,6 @@ tals: cmake_check_build_system
 tals/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/build
 .PHONY : tals/fast
-
-libglScreenshotHelper/src/glScreenshotHelper.o: libglScreenshotHelper/src/glScreenshotHelper.cpp.o
-.PHONY : libglScreenshotHelper/src/glScreenshotHelper.o
-
-# target to build an object file
-libglScreenshotHelper/src/glScreenshotHelper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o
-.PHONY : libglScreenshotHelper/src/glScreenshotHelper.cpp.o
-
-libglScreenshotHelper/src/glScreenshotHelper.i: libglScreenshotHelper/src/glScreenshotHelper.cpp.i
-.PHONY : libglScreenshotHelper/src/glScreenshotHelper.i
-
-# target to preprocess a source file
-libglScreenshotHelper/src/glScreenshotHelper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.i
-.PHONY : libglScreenshotHelper/src/glScreenshotHelper.cpp.i
-
-libglScreenshotHelper/src/glScreenshotHelper.s: libglScreenshotHelper/src/glScreenshotHelper.cpp.s
-.PHONY : libglScreenshotHelper/src/glScreenshotHelper.s
-
-# target to generate assembly for a file
-libglScreenshotHelper/src/glScreenshotHelper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tals.dir/build.make CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.s
-.PHONY : libglScreenshotHelper/src/glScreenshotHelper.cpp.s
 
 libglScreenshotHelper/src/main.o: libglScreenshotHelper/src/main.cpp.o
 .PHONY : libglScreenshotHelper/src/main.o
@@ -185,10 +174,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... glScreenshotHelper"
 	@echo "... tals"
-	@echo "... libglScreenshotHelper/src/glScreenshotHelper.o"
-	@echo "... libglScreenshotHelper/src/glScreenshotHelper.i"
-	@echo "... libglScreenshotHelper/src/glScreenshotHelper.s"
 	@echo "... libglScreenshotHelper/src/main.o"
 	@echo "... libglScreenshotHelper/src/main.i"
 	@echo "... libglScreenshotHelper/src/main.s"

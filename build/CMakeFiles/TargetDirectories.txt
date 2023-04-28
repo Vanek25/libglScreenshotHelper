@@ -1,3 +1,4 @@
-/home/linux/projects/tals/build/CMakeFiles/tals.dir
-/home/linux/projects/tals/build/CMakeFiles/edit_cache.dir
-/home/linux/projects/tals/build/CMakeFiles/rebuild_cache.dir
+/home/neon/projects/tals/build/CMakeFiles/glScreenshotHelper.dir
+/home/neon/projects/tals/build/CMakeFiles/tals.dir
+/home/neon/projects/tals/build/CMakeFiles/edit_cache.dir
+/home/neon/projects/tals/build/CMakeFiles/rebuild_cache.dir

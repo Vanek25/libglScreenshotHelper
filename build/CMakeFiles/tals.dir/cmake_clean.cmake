@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o"
-  "CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o.d"
   "CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o"
   "CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o.d"
   "tals"

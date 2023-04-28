@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/linux/projects/tals
+CMAKE_SOURCE_DIR = /home/neon/projects/tals
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/linux/projects/tals/build
+CMAKE_BINARY_DIR = /home/neon/projects/tals/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/glsh.dir/depend.make
@@ -74,6 +74,6 @@ CMakeFiles/glsh.dir/clean:
 .PHONY : CMakeFiles/glsh.dir/clean
 
 CMakeFiles/glsh.dir/depend:
-	cd /home/linux/projects/tals/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/linux/projects/tals /home/linux/projects/tals /home/linux/projects/tals/build /home/linux/projects/tals/build /home/linux/projects/tals/build/CMakeFiles/glsh.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/neon/projects/tals/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neon/projects/tals /home/neon/projects/tals /home/neon/projects/tals/build /home/neon/projects/tals/build /home/neon/projects/tals/build/CMakeFiles/glsh.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/glsh.dir/depend
 
