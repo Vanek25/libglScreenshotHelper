@@ -6,15 +6,12 @@
 int main()
 {
     CppUnit::Test *suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
-
     CppUnit::TextTestRunner runner;
-    runner.addTest( suite );
 
+    runner.addTest( suite );
     runner.setOutputter( new CppUnit::CompilerOutputter(&runner.result(), std::cerr));
 
     bool wasSucessful = runner.run();
 
     return wasSucessful ? 0 : 1;
-
-    return 0;
 }

@@ -21,12 +21,12 @@ find_library(LIB_freeimage freeimage)
 find_library(LIB_cppunit cppunit)
 
 target_link_libraries(${PROJECT_NAME} freeimage  glScreenshotHelper cppunit ${OPENGL_LIBRARIES} glfw)
-
 include(CTest) # We include CTest which is part of CMake
 
 enable_testing()
 
 add_test(NAME tals COMMAND tals)
+
 add_subdirectory(libglScreenshotHelperTests)
 add_subdirectory(libglScreenshotHelper)
 

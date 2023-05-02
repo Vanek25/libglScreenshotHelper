@@ -5,4 +5,4 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 add_test(tests "/home/neon/projects/tals/build/libglScreenshotHelperTests/tests")
-set_tests_properties(tests PROPERTIES  _BACKTRACE_TRIPLES "/home/neon/projects/tals/libglScreenshotHelperTests/CMakeLists.txt;14;add_test;/home/neon/projects/tals/libglScreenshotHelperTests/CMakeLists.txt;0;")
+set_tests_properties(tests PROPERTIES  _BACKTRACE_TRIPLES "/home/neon/projects/tals/libglScreenshotHelperTests/CMakeLists.txt;16;add_test;/home/neon/projects/tals/libglScreenshotHelperTests/CMakeLists.txt;0;")

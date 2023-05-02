@@ -41,7 +41,7 @@ void ScreenshotHelperTest::testCreateFilename()
     strcpy(fileName, shrtFileName);
     strcat(fileName, type);
 
-    CPPUNIT_ASSERT_EQUAL(sHelper.i_tals_createFileName("jpg"), sHelper.i_tals_createFileName("jpg"));
+    CPPUNIT_ASSERT_EQUAL(sHelper.i_tals_createFileName("jpg"), sHelper.i_tals_createFileName("asdsadsadasdasdsa"));
     CPPUNIT_ASSERT(sHelper.i_tals_createFileName("png") == sHelper.i_tals_createFileName("jpg"));
     //CPPUNIT_ASSERT(sHelper.i_tals_createFileName("jpg") == fileName);
     //CPPUNIT_ASSERT(sHelper.i_tals_createFileName("pss") == fileName);

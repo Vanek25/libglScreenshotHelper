@@ -11,4 +11,6 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 target_link_libraries(tests PRIVATE glScreenshotHelper cppunit)
 
+enable_testing()
+
 add_test(NAME tests COMMAND tests)

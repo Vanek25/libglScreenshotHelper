@@ -169,7 +169,6 @@ int runTests()
 int main()
 {
     drawQuad("png", 1000, 700);
-    //return runTests();
 
     return 0;
 }
