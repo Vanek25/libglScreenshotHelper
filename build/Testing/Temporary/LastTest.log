@@ -1,0 +1,24 @@
+Start testing: May 02 13:25 MSK
+----------------------------------------------------------
+1/1 Testing: tals
+1/1 Test: tals
+Command: "/home/neon/projects/tals/build/tals"
+Directory: /home/neon/projects/tals/build
+"tals" start time: May 02 13:25 MSK
+Output:
+----------------------------------------------------------
+[W] I_TALS: Найдено более одного раздела USB накопителя.
+[W] I_TALS: Найдено более одного раздела USB накопителя.
+[W] I_TALS: Найдено более одного раздела USB накопителя.
+[W] I_TALS: Найдено более одного раздела USB накопителя.
+[W] I_TALS: Найдено более одного раздела USB накопителя.
+[W] I_TALS: Найдено более одного раздела USB накопителя.
+<end of output>
+Test time =   2.54 sec
+----------------------------------------------------------
+Test Passed.
+"tals" end time: May 02 13:25 MSK
+"tals" time elapsed: 00:00:02
+----------------------------------------------------------
+
+End testing: May 02 13:25 MSK

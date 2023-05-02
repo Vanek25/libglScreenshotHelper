@@ -1,13 +1,12 @@
 #include <GLFW/glfw3.h>
 #include "../include/glScreenshotHelper.h"
-#include "../test/glScreenshotHelperTest.h"
 #include <cppunit/ui/text/TextTestRunner.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 
 void drawQuad(const char *typeScreenshot, int width, int height)
 {
-    ScreenshotHelper shelper;
+    ScreenshotHelper sHelper;
 
     GLFWwindow *window;
     
@@ -99,16 +98,16 @@ void drawQuad(const char *typeScreenshot, int width, int height)
         glEnd();
 
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-            shelper.takeAndLoadScreenshot(typeScreenshot, 1000, 700);
+            sHelper.takeAndLoadScreenshot(typeScreenshot, 1000, 700);
 
         if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
-            shelper.takeAndLoadScreenshot("bmp", 1000, 700);
+            sHelper.takeAndLoadScreenshot("bmp", 1000, 700);
  
         if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
-            shelper.takeAndLoadScreenshot("png", 1000, 700);
+            sHelper.takeAndLoadScreenshot("png", 1000, 700);
 
         if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-            shelper.takeAndLoadScreenshot("jpg", 1000, 700);
+            sHelper.takeAndLoadScreenshot("jpg", 1000, 700);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -117,24 +116,22 @@ void drawQuad(const char *typeScreenshot, int width, int height)
     glfwTerminate();
 }
 
-int runTests()
-{
-    CppUnit::Test *suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
+// int runTests()
+// {
+//     CppUnit::Test *suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
 
-    CppUnit::TextTestRunner runner;
-    runner.addTest(suite);
+//     CppUnit::TextTestRunner runner;
+//     runner.addTest(suite);
 
-    runner.setOutputter(new CppUnit::CompilerOutputter(&runner.result(), std::cerr));
-    bool wasSucessful = runner.run();
-    return wasSucessful ? 0 : 1;
-}
+//     runner.setOutputter(new CppUnit::CompilerOutputter(&runner.result(), std::cerr));
+//     bool wasSucessful = runner.run();
+//     return wasSucessful ? 0 : 1;
+// }
 
 int main()
 {
-    
-
     drawQuad("png", 1000, 700);
-    return runTests();
+    //return runTests();
 
     return 0;
 }

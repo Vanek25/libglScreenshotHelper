@@ -8,5 +8,10 @@
   "directory": "/home/neon/projects/tals/build",
   "command": "/usr/bin/g++  -I/home/neon/projects/tals/./libglScreenshotHelper/include -I/home/neon/projects/tals/libglScreenshotHelper/include -g -std=gnu++17 -o CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o -c /home/neon/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp",
   "file": "/home/neon/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp"
+},
+{
+  "directory": "/home/neon/projects/tals/build",
+  "command": "/usr/bin/g++  -I/home/neon/projects/tals/./libglScreenshotHelper/include -I/home/neon/projects/tals/libglScreenshotHelper/include -g -std=gnu++17 -o CMakeFiles/tals.dir/libglScreenshotHelperTests/glScreenshotHelperTest.cpp.o -c /home/neon/projects/tals/libglScreenshotHelperTests/glScreenshotHelperTest.cpp",
+  "file": "/home/neon/projects/tals/libglScreenshotHelperTests/glScreenshotHelperTest.cpp"
 }
 ]

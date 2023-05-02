@@ -7,8 +7,10 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "main.cpp",
-                "libglScreenshotHelper.a",
+                "${workspaceFolder}/libglScreenshotHelper/src/main.cpp",
+                "${workspaceFolder}/libglScreenshotHelper/src/libglScreenshotHelper.a",
+                "${workspaceFolder}/libglScreenshotHelperTests/glScreenshotHelperTest.cpp",
+                //"${workspaceFolder}/libglScreenshotHelperTests/main.cpp",
                 "-o",
                 "${workspaceFolder}/bin/${fileBasenameNoExtension}",
                 "-lGL",

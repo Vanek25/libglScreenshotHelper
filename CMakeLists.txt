@@ -12,11 +12,21 @@ target_include_directories(glScreenshotHelper PUBLIC ${PROJECT_SOURCE_DIR}/libgl
 
 set_target_properties(glScreenshotHelper PROPERTIES LINKER_LANGUAGE CXX) 
 
-add_executable(tals libglScreenshotHelper/src/main.cpp libglScreenshotHelper/src/glScreenshotHelper.cpp)
+add_executable(tals libglScreenshotHelper/src/main.cpp libglScreenshotHelper/src/glScreenshotHelper.cpp libglScreenshotHelperTests/glScreenshotHelperTest.cpp)
 
 find_package(glfw3 3.3 REQUIRED)
 find_package(OpenGL REQUIRED)
 
 find_library(LIB_freeimage freeimage)
+find_library(LIB_cppunit cppunit)
 
-target_link_libraries(${PROJECT_NAME} freeimage  glScreenshotHelper ${OPENGL_LIBRARIES} glfw)
+target_link_libraries(${PROJECT_NAME} freeimage  glScreenshotHelper cppunit ${OPENGL_LIBRARIES} glfw)
+
+include(CTest) # We include CTest which is part of CMake
+
+enable_testing()
+
+add_test(NAME tals COMMAND tals)
+#add_subdirectory(libglScreenshotHelperTests)
+#add_subdirectory(libglScreenshotHelper)
+

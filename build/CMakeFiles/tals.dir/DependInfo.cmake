@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/neon/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp" "CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o" "gcc" "CMakeFiles/tals.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o.d"
   "/home/neon/projects/tals/libglScreenshotHelper/src/main.cpp" "CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o" "gcc" "CMakeFiles/tals.dir/libglScreenshotHelper/src/main.cpp.o.d"
+  "/home/neon/projects/tals/libglScreenshotHelperTests/glScreenshotHelperTest.cpp" "CMakeFiles/tals.dir/libglScreenshotHelperTests/glScreenshotHelperTest.cpp.o" "gcc" "CMakeFiles/tals.dir/libglScreenshotHelperTests/glScreenshotHelperTest.cpp.o.d"
   )
 
 # Targets to which this target links.
