@@ -1,2 +1,0 @@
-/usr/bin/ar qc libglScreenshotHelper.a 
-/usr/bin/ranlib libglScreenshotHelper.a
