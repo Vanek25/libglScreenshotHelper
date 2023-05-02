@@ -31,3 +31,10 @@
 /home/neon/projects/tals/build/CMakeFiles/test.dir
 /home/neon/projects/tals/build/CMakeFiles/edit_cache.dir
 /home/neon/projects/tals/build/CMakeFiles/rebuild_cache.dir
+/home/neon/projects/tals/build/libglScreenshotHelperTests/CMakeFiles/tests.dir
+/home/neon/projects/tals/build/libglScreenshotHelperTests/CMakeFiles/test.dir
+/home/neon/projects/tals/build/libglScreenshotHelperTests/CMakeFiles/edit_cache.dir
+/home/neon/projects/tals/build/libglScreenshotHelperTests/CMakeFiles/rebuild_cache.dir
+/home/neon/projects/tals/build/libglScreenshotHelper/CMakeFiles/test.dir
+/home/neon/projects/tals/build/libglScreenshotHelper/CMakeFiles/edit_cache.dir
+/home/neon/projects/tals/build/libglScreenshotHelper/CMakeFiles/rebuild_cache.dir

@@ -27,6 +27,6 @@ include(CTest) # We include CTest which is part of CMake
 enable_testing()
 
 add_test(NAME tals COMMAND tals)
-#add_subdirectory(libglScreenshotHelperTests)
-#add_subdirectory(libglScreenshotHelper)
+add_subdirectory(libglScreenshotHelperTests)
+add_subdirectory(libglScreenshotHelper)
 

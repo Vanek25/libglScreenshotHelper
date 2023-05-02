@@ -1,18 +1,21 @@
-Start testing: May 02 13:23 MSK
+Start testing: May 02 14:49 MSK
 ----------------------------------------------------------
-1/1 Testing: tals
-1/1 Test: tals
-Command: "/home/neon/projects/tals/build/tals"
-Directory: /home/neon/projects/tals/build
-"tals" start time: May 02 13:23 MSK
+2/2 Testing: tests
+2/2 Test: tests
+Command: "/home/neon/projects/tals/build/libglScreenshotHelperTests/tests"
+Directory: /home/neon/projects/tals/build/libglScreenshotHelperTests
+"tests" start time: May 02 14:49 MSK
 Output:
 ----------------------------------------------------------
+
+
+OK (0)
 <end of output>
-Test time =   5.46 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"tals" end time: May 02 13:24 MSK
-"tals" time elapsed: 00:00:05
+"tests" end time: May 02 14:49 MSK
+"tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 02 13:24 MSK
+End testing: May 02 14:49 MSK

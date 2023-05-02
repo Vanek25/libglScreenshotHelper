@@ -516,6 +516,19 @@ ContinuousSubmit/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ContinuousSubmit.dir/build.make CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f libglScreenshotHelperTests/CMakeFiles/tests.dir/build.make libglScreenshotHelperTests/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
 libglScreenshotHelper/src/glScreenshotHelper.o: libglScreenshotHelper/src/glScreenshotHelper.cpp.o
 .PHONY : libglScreenshotHelper/src/glScreenshotHelper.o
 
@@ -627,6 +640,7 @@ help:
 	@echo "... NightlyUpdate"
 	@echo "... glScreenshotHelper"
 	@echo "... tals"
+	@echo "... tests"
 	@echo "... libglScreenshotHelper/src/glScreenshotHelper.o"
 	@echo "... libglScreenshotHelper/src/glScreenshotHelper.i"
 	@echo "... libglScreenshotHelper/src/glScreenshotHelper.s"

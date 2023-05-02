@@ -65,10 +65,13 @@ CMAKE_BINARY_DIR = /home/neon/projects/tals/build
 # The main recursive "all" target.
 all: CMakeFiles/glScreenshotHelper.dir/all
 all: CMakeFiles/tals.dir/all
+all: libglScreenshotHelperTests/all
+all: libglScreenshotHelper/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: libglScreenshotHelperTests/preinstall
+preinstall: libglScreenshotHelper/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -102,7 +105,39 @@ clean: CMakeFiles/ContinuousTest.dir/clean
 clean: CMakeFiles/ContinuousCoverage.dir/clean
 clean: CMakeFiles/ContinuousMemCheck.dir/clean
 clean: CMakeFiles/ContinuousSubmit.dir/clean
+clean: libglScreenshotHelperTests/clean
+clean: libglScreenshotHelper/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory libglScreenshotHelper
+
+# Recursive "all" directory target.
+libglScreenshotHelper/all:
+.PHONY : libglScreenshotHelper/all
+
+# Recursive "preinstall" directory target.
+libglScreenshotHelper/preinstall:
+.PHONY : libglScreenshotHelper/preinstall
+
+# Recursive "clean" directory target.
+libglScreenshotHelper/clean:
+.PHONY : libglScreenshotHelper/clean
+
+#=============================================================================
+# Directory level rules for directory libglScreenshotHelperTests
+
+# Recursive "all" directory target.
+libglScreenshotHelperTests/all: libglScreenshotHelperTests/CMakeFiles/tests.dir/all
+.PHONY : libglScreenshotHelperTests/all
+
+# Recursive "preinstall" directory target.
+libglScreenshotHelperTests/preinstall:
+.PHONY : libglScreenshotHelperTests/preinstall
+
+# Recursive "clean" directory target.
+libglScreenshotHelperTests/clean: libglScreenshotHelperTests/CMakeFiles/tests.dir/clean
+.PHONY : libglScreenshotHelperTests/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/glScreenshotHelper.dir
@@ -883,6 +918,32 @@ ContinuousSubmit: CMakeFiles/ContinuousSubmit.dir/rule
 CMakeFiles/ContinuousSubmit.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ContinuousSubmit.dir/build.make CMakeFiles/ContinuousSubmit.dir/clean
 .PHONY : CMakeFiles/ContinuousSubmit.dir/clean
+
+#=============================================================================
+# Target rules for target libglScreenshotHelperTests/CMakeFiles/tests.dir
+
+# All Build rule for target.
+libglScreenshotHelperTests/CMakeFiles/tests.dir/all: CMakeFiles/glScreenshotHelper.dir/all
+	$(MAKE) $(MAKESILENT) -f libglScreenshotHelperTests/CMakeFiles/tests.dir/build.make libglScreenshotHelperTests/CMakeFiles/tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f libglScreenshotHelperTests/CMakeFiles/tests.dir/build.make libglScreenshotHelperTests/CMakeFiles/tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/neon/projects/tals/build/CMakeFiles --progress-num=6,7 "Built target tests"
+.PHONY : libglScreenshotHelperTests/CMakeFiles/tests.dir/all
+
+# Build rule for subdir invocation for target.
+libglScreenshotHelperTests/CMakeFiles/tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/neon/projects/tals/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libglScreenshotHelperTests/CMakeFiles/tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/neon/projects/tals/build/CMakeFiles 0
+.PHONY : libglScreenshotHelperTests/CMakeFiles/tests.dir/rule
+
+# Convenience name for target.
+tests: libglScreenshotHelperTests/CMakeFiles/tests.dir/rule
+.PHONY : tests
+
+# clean rule for target.
+libglScreenshotHelperTests/CMakeFiles/tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f libglScreenshotHelperTests/CMakeFiles/tests.dir/build.make libglScreenshotHelperTests/CMakeFiles/tests.dir/clean
+.PHONY : libglScreenshotHelperTests/CMakeFiles/tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

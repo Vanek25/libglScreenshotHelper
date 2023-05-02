@@ -98,16 +98,54 @@ void drawQuad(const char *typeScreenshot, int width, int height)
         glEnd();
 
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-            sHelper.takeAndLoadScreenshot(typeScreenshot, 1000, 700);
+        {
+            try
+            {
+                sHelper.takeAndLoadScreenshot(typeScreenshot, 1000, 700);
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+            
+        }
 
         if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
-            sHelper.takeAndLoadScreenshot("bmp", 1000, 700);
+        {
+            try
+            {
+                sHelper.takeAndLoadScreenshot("bmp", 1000, 700);
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+            
+        }
  
         if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
-            sHelper.takeAndLoadScreenshot("png", 1000, 700);
+        {
+            try
+            {
+                sHelper.takeAndLoadScreenshot("png", 1000, 700);
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+        }   
 
         if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-            sHelper.takeAndLoadScreenshot("jpg", 1000, 700);
+        {
+            try
+            {
+                sHelper.takeAndLoadScreenshot("jpg", 1000, 700);
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+        }
 
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -116,17 +154,17 @@ void drawQuad(const char *typeScreenshot, int width, int height)
     glfwTerminate();
 }
 
-// int runTests()
-// {
-//     CppUnit::Test *suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
+int runTests()
+{
+    CppUnit::Test *suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
 
-//     CppUnit::TextTestRunner runner;
-//     runner.addTest(suite);
+    CppUnit::TextTestRunner runner;
+    runner.addTest(suite);
 
-//     runner.setOutputter(new CppUnit::CompilerOutputter(&runner.result(), std::cerr));
-//     bool wasSucessful = runner.run();
-//     return wasSucessful ? 0 : 1;
-// }
+    runner.setOutputter(new CppUnit::CompilerOutputter(&runner.result(), std::cerr));
+    bool wasSucessful = runner.run();
+    return wasSucessful ? 0 : 1;
+}
 
 int main()
 {

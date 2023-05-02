@@ -1,24 +1,38 @@
-Start testing: May 02 13:25 MSK
+Start testing: May 02 15:15 MSK
 ----------------------------------------------------------
-1/1 Testing: tals
-1/1 Test: tals
+1/2 Testing: tals
+1/2 Test: tals
 Command: "/home/neon/projects/tals/build/tals"
 Directory: /home/neon/projects/tals/build
-"tals" start time: May 02 13:25 MSK
+"tals" start time: May 02 15:15 MSK
 Output:
 ----------------------------------------------------------
-[W] I_TALS: Найдено более одного раздела USB накопителя.
-[W] I_TALS: Найдено более одного раздела USB накопителя.
-[W] I_TALS: Найдено более одного раздела USB накопителя.
-[W] I_TALS: Найдено более одного раздела USB накопителя.
-[W] I_TALS: Найдено более одного раздела USB накопителя.
-[W] I_TALS: Найдено более одного раздела USB накопителя.
+[E] I_TALS: Не обнаружен каталог USB накопителя! Проверьте исправность USB накопителя.
+terminate called after throwing an instance of 'char const*'
 <end of output>
-Test time =   2.54 sec
+Test time =   1.44 sec
 ----------------------------------------------------------
-Test Passed.
-"tals" end time: May 02 13:25 MSK
-"tals" time elapsed: 00:00:02
+Test Failed.
+"tals" end time: May 02 15:15 MSK
+"tals" time elapsed: 00:00:01
 ----------------------------------------------------------
 
-End testing: May 02 13:25 MSK
+2/2 Testing: tests
+2/2 Test: tests
+Command: "/home/neon/projects/tals/build/libglScreenshotHelperTests/tests"
+Directory: /home/neon/projects/tals/build/libglScreenshotHelperTests
+"tests" start time: May 02 15:15 MSK
+Output:
+----------------------------------------------------------
+
+
+OK (0)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"tests" end time: May 02 15:15 MSK
+"tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 02 15:15 MSK

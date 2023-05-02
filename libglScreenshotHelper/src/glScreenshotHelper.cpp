@@ -51,7 +51,6 @@ std::vector<std::string> ScreenshotHelper::i_tals_findCatalogUsbName()
     if (dirPath == NULL)
     {
         D("[E]", "Не удалось открыть каталог куда монируется USB накопитель! Путь указывает на несуществующий каталог: ", DEFAULT_PATH);
-        throw nullptr;
     }
 
     while ((entry = readdir(dirPath)) != NULL)
@@ -70,7 +69,6 @@ std::vector<std::string> ScreenshotHelper::i_tals_findCatalogUsbName()
     if (catalogsCount == 0)
     {
         D("[E]", "Не обнаружен каталог USB накопителя! Проверьте исправность USB накопителя.","");
-        throw "-1";
     }
 
     if (catalogsCount > 1)
@@ -90,15 +88,14 @@ void ScreenshotHelper::takeAndLoadScreenshot(const char *type, int width, int he
     if ((strcmp(type, "bmp")) != 0 && (strcmp(type, "jpg")) != 0 && (strcmp(type, "png")) != 0)
     {
         D("[E]", "Неверный тип скриншота: ", type);
-        throw "BAD";  
     }
 
     std::vector<std::string> catalogUsbNameVec = i_tals_findCatalogUsbName();
     char *fileName = i_tals_createFileName(type);
 
-    if (catalogUsbNameVec.empty() || fileName == NULL)
+    if (fileName == NULL)
     {
-        throw nullptr;
+        D("[E]", "Не удалось создать название файла скриношта. Возможно проблемы со встроенным временем!", "");
     }
 
     BYTE *pixels = new BYTE[3 * width * height];
@@ -107,7 +104,7 @@ void ScreenshotHelper::takeAndLoadScreenshot(const char *type, int width, int he
     FIBITMAP *image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
     if (image == NULL)
     {
-         D("[E]", "Не удалось сконвертировать необработанное растровое изображение в растровое изображение!", "");   
+         D("[E]", "Не удалось сконвертировать необработанное растровое изображение в растровое изображение!", ""); 
     }
 
     for(std::vector<int>::size_type i = 0; i < catalogUsbNameVec.size(); i++)
@@ -120,8 +117,7 @@ void ScreenshotHelper::takeAndLoadScreenshot(const char *type, int width, int he
 
         if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
         {
-            D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для каталога ", FreeImage_GetFIFFromFilename(fileName));
-            throw fileName;
+            //D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для каталога ", FreeImage_GetFIFFromFilename(fileName));
         }
 
         FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);
