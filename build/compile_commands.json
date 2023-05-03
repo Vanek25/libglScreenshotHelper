@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/neon/projects/tals/build/bin",
-  "command": "/usr/bin/g++ -DglScreenshotHelper_EXPORTS -I/home/neon/projects/tals/libglScreenshotHelper/include -g -fPIC -o CMakeFiles/glScreenshotHelper.dir/src/glScreenshotHelper.cpp.o -c /home/neon/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp",
-  "file": "/home/neon/projects/tals/libglScreenshotHelper/src/glScreenshotHelper.cpp"
-}
-]
