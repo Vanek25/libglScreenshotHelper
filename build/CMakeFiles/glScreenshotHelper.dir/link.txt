@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libglScreenshotHelper.so -o libglScreenshotHelper.so CMakeFiles/glScreenshotHelper.dir/libglScreenshotHelper/src/glScreenshotHelper.cpp.o 

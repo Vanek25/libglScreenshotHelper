@@ -3,22 +3,28 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
-class ScreenshotHelperTest : public CPPUNIT_NS::TestFixture
+namespace vniiftri
 {
-    CPPUNIT_TEST_SUITE(ScreenshotHelperTest);
-        CPPUNIT_TEST(testCreateFilename);
-        CPPUNIT_TEST(testFindCatalogUsbName);
-        CPPUNIT_TEST(testTakeAndLoadScreenshot);
-    CPPUNIT_TEST_SUITE_END();
+    namespace oscilloscope_gui
+    {
+        class ScreenshotHelperTest : public CPPUNIT_NS::TestFixture
+        {
+            CPPUNIT_TEST_SUITE(ScreenshotHelperTest);
+                CPPUNIT_TEST(testCreateFilename);
+                CPPUNIT_TEST(testFindCatalogUsbName);
+                CPPUNIT_TEST(testTakeAndLoadScreenshot);
+            CPPUNIT_TEST_SUITE_END();
 
-    public:
-    void setUp();
-    void tearDown();
+            public:
+            void setUp();
+            void tearDown();
 
-    void testCreateFilename();
-    void testFindCatalogUsbName();
-    void testTakeAndLoadScreenshot();
+            void testCreateFilename();
+            void testFindCatalogUsbName();
+            void testTakeAndLoadScreenshot();
 
-};
+        };
+    }
+}
 
 #endif

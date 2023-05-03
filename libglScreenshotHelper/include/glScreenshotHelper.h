@@ -4,12 +4,20 @@
 #include <vector>
 #include <string>
 
-class ScreenshotHelper
+namespace vniiftri
 {
-    public:
-        static char *i_tals_createFileName(const char *type);
-        static std::vector<std::string> i_tals_findCatalogUsbName();
-        static void takeAndLoadScreenshot(const char *type, int width, int height);
-};
+    namespace oscilloscope_gui
+    {
+        class ScreenshotHelper
+        {
+            public:
+                static char *i_tals_createFileName(const char *type);
+                static std::vector<std::string> i_tals_findCatalogUsbName();
+                static void i_tals_takeAndLoadScreenshot(const char *type, int width, int height);
+        };
+    }
+}
+
+
 
 #endif
