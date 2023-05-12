@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/neon/projects/libglScreenshotHelper/build",
+  "command": "/usr/bin/g++ -DglScreenshotHelper_EXPORTS -I/home/neon/projects/libglScreenshotHelper/./libglScreenshotHelper/include -I/home/neon/projects/libglScreenshotHelper/include -g -fPIC -std=gnu++17 -o CMakeFiles/glScreenshotHelper.dir/src/glScreenshotHelper.cpp.o -c /home/neon/projects/libglScreenshotHelper/src/glScreenshotHelper.cpp",
+  "file": "/home/neon/projects/libglScreenshotHelper/src/glScreenshotHelper.cpp"
+}
+]
