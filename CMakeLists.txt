@@ -5,12 +5,13 @@ project(tals)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(./libglScreenshotHelper/include)
+include_directories(../libglScreenshotHelper/include)
 
-add_library(glScreenshotHelper_static STATIC src/libglScreenshotHelper.a)
+add_library(glScreenshotHelper_static STATIC src/glScreenshotHelper.cpp include/glScreenshotHelper.h)
 add_library(glScreenshotHelper SHARED src/glScreenshotHelper.cpp)
 
 target_include_directories(glScreenshotHelper PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(glScreenshotHelper_static)
 
 set_target_properties(
     glScreenshotHelper_static PROPERTIES LINKER_LANGUAGE CXX
