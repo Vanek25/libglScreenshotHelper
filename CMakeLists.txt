@@ -5,8 +5,6 @@ project(tals)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-#add_subdirectory(tests)
-
 include_directories(../libglScreenshotHelper/include)
 
 add_library(glScreenshotHelper_static STATIC src/glScreenshotHelper.cpp include/glScreenshotHelper.h)
@@ -24,7 +22,6 @@ set_target_properties(
 find_package(
     glfw3 3.3 REQUIRED
     OpenGL REQUIRED
-
 )
 
 find_library(
@@ -32,7 +29,7 @@ find_library(
     LIB_cppunit cppunit
 )
 
-target_link_libraries(glsh_test glScreenshotHelper cppunit freeimage ${OPENGL_LIBRARIES} glfw)
+target_link_libraries(glsh_test ${OPENGL_LIBRARY} glfw ${OPENGL_LIBRARY} glfw3 cppunit glScreenshotHelper freeimage GL GLU glut ${OPENGL_LIBRARIES})
 
 install(FILES "${PROJECT_SOURCE_DIR}/build/libglScreenshotHelper.so" DESTINATION /usr/lib/libglScreenshotHelper)
 install(TARGETS glScreenshotHelper DESTINATION ${CMAKE_INSTALL_LIBDIR} PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
@@ -40,13 +37,10 @@ install(FILES "${PROJECT_SOURCE_DIR}/include/glScreenshotHelper.h" DESTINATION /
 
 #   ТЕСТЫ   #
 
-
-
 option (UNIT_TEST "Build unit tests" ON)
 if (UNIT_TEST)
    enable_testing ()
    add_test(NAME glsh_test COMMAND glsh_test)
-   #set_tests_properties(glsh_test PROPERTIES PASS_REGULAR_EXPRESSION "TEST PASSED;Pass")
 else()
    message("Skip unit tests...")
 endif()

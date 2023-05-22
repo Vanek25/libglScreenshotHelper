@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-bca5a5efa34eea725e78.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tals",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "glScreenshotHelper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-glScreenshotHelper-Debug-cfd344bf48fecd85f21d.json",
+					"name" : "glScreenshotHelper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "glScreenshotHelper_static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-glScreenshotHelper_static-Debug-244f81db8aa878a351a0.json",
+					"name" : "glScreenshotHelper_static",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "glsh_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-glsh_test-Debug-73a63a409c1dfd4bad92.json",
+					"name" : "glsh_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/neon/projects/libglScreenshotHelper/build",
+		"source" : "/home/neon/projects/libglScreenshotHelper"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
