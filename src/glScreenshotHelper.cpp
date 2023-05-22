@@ -113,7 +113,7 @@ namespace vniiftri
 
             for(std::vector<int>::size_type i = 0; i < catalogUsbNameVec.size(); i++)
             {
-                char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(catalogUsbNameVec[i].c_str()) + strlen(fileName)];
+                char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(catalogUsbNameVec[i].c_str()) + strlen(fileName) + 1];
 
                 strcpy(pathToLoadScreenshot, DEFAULT_PATH);
                 strcat(pathToLoadScreenshot, catalogUsbNameVec[i].c_str());
@@ -121,7 +121,7 @@ namespace vniiftri
 
                 if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
                 {
-                    D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для каталога ", FreeImage_GetFIFFromFilename(fileName));
+                    D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]);
                 }
 
                 FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);
