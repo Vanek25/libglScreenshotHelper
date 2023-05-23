@@ -1,14 +1,8 @@
 CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o: \
  /home/neon/projects/libglScreenshotHelper/tests/testMain.cpp \
  /usr/include/stdc-predef.h \
- /home/neon/projects/libglScreenshotHelper/tests/glScreenshotHelperTest.h \
- /usr/include/cppunit/extensions/HelperMacros.h \
- /usr/include/cppunit/TestCaller.h /usr/include/cppunit/Exception.h \
- /usr/include/cppunit/Portability.h /usr/include/cppunit/config-auto.h \
- /usr/include/cppunit/config/CppUnitApi.h \
- /usr/include/cppunit/config/SelectDllLoader.h \
- /usr/include/cppunit/Message.h /usr/include/c++/11/deque \
- /usr/include/c++/11/bits/stl_algobase.h \
+ /usr/local/include/libglScreenshotHelper/glScreenshotHelper.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -43,10 +37,13 @@ CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o: \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/ext/alloc_traits.h \
  /usr/include/c++/11/bits/alloc_traits.h \
- /usr/include/c++/11/bits/stl_deque.h \
+ /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/initializer_list \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/functional_hash.h \
+ /usr/include/c++/11/bits/hash_bytes.h \
  /usr/include/c++/11/bits/range_access.h \
- /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/string \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/string \
  /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/char_traits.h \
  /usr/include/c++/11/bits/postypes.h /usr/include/c++/11/cwchar \
@@ -112,10 +109,7 @@ CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h \
  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
- /usr/include/c++/11/string_view \
- /usr/include/c++/11/bits/functional_hash.h \
- /usr/include/c++/11/bits/hash_bytes.h \
- /usr/include/c++/11/bits/string_view.tcc \
+ /usr/include/c++/11/string_view /usr/include/c++/11/bits/string_view.tcc \
  /usr/include/c++/11/ext/string_conversions.h /usr/include/c++/11/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -139,89 +133,18 @@ CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /usr/include/cppunit/SourceLine.h /usr/include/c++/11/exception \
- /usr/include/c++/11/bits/exception_ptr.h \
- /usr/include/c++/11/bits/cxxabi_init_exception.h \
- /usr/include/c++/11/typeinfo /usr/include/c++/11/bits/nested_exception.h \
- /usr/include/cppunit/TestCase.h /usr/include/cppunit/TestLeaf.h \
- /usr/include/cppunit/Test.h /usr/include/cppunit/TestAssert.h \
- /usr/include/cppunit/Asserter.h /usr/include/cppunit/AdditionalMessage.h \
- /usr/include/cppunit/portability/Stream.h /usr/include/c++/11/sstream \
- /usr/include/c++/11/istream /usr/include/c++/11/ios \
- /usr/include/c++/11/bits/ios_base.h \
- /usr/include/c++/11/bits/locale_classes.h \
- /usr/include/c++/11/bits/locale_classes.tcc \
- /usr/include/c++/11/system_error \
- /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
- /usr/include/c++/11/stdexcept /usr/include/c++/11/streambuf \
- /usr/include/c++/11/bits/streambuf.tcc \
- /usr/include/c++/11/bits/basic_ios.h \
- /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
- /usr/include/c++/11/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
- /usr/include/c++/11/bits/locale_facets.tcc \
- /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
- /usr/include/c++/11/bits/ostream.tcc \
- /usr/include/c++/11/bits/istream.tcc \
- /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/fstream \
- /usr/include/c++/11/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/iostream \
- /usr/include/cppunit/tools/StringHelper.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
- /usr/include/cppunit/TestFixture.h /usr/include/c++/11/functional \
- /usr/include/c++/11/tuple /usr/include/c++/11/utility \
- /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/array \
- /usr/include/c++/11/bits/uses_allocator.h \
- /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/bits/refwrap.h \
- /usr/include/c++/11/bits/std_function.h \
- /usr/include/c++/11/unordered_map \
- /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/node_handle.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/bits/stl_algo.h \
- /usr/include/c++/11/bits/algorithmfwd.h \
- /usr/include/c++/11/bits/stl_heap.h \
- /usr/include/c++/11/bits/stl_tempbuf.h \
- /usr/include/c++/11/bits/uniform_int_dist.h \
- /usr/include/cppunit/TestSuite.h /usr/include/cppunit/TestComposite.h \
- /usr/include/cppunit/extensions/AutoRegisterSuite.h \
- /usr/include/cppunit/extensions/TestSuiteFactory.h \
- /usr/include/cppunit/extensions/TestFactory.h \
  /usr/include/cppunit/extensions/TestFactoryRegistry.h \
- /usr/include/c++/11/set /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/cppunit/Portability.h /usr/include/cppunit/config-auto.h \
+ /usr/include/cppunit/config/CppUnitApi.h \
+ /usr/include/cppunit/config/SelectDllLoader.h /usr/include/c++/11/set \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
- /usr/include/cppunit/extensions/ExceptionTestCaseDecorator.h \
- /usr/include/cppunit/extensions/TestCaseDecorator.h \
- /usr/include/cppunit/extensions/TestFixtureFactory.h \
- /usr/include/cppunit/extensions/TestNamer.h \
- /usr/include/cppunit/extensions/TestSuiteBuilderContext.h \
- /usr/include/c++/11/map /usr/include/c++/11/bits/stl_map.h \
- /usr/include/c++/11/bits/stl_multimap.h /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/unique_ptr.h \
- /usr/include/c++/11/bits/shared_ptr.h \
- /usr/include/c++/11/bits/shared_ptr_base.h \
- /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/ext/concurrence.h \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/bits/atomic_base.h \
- /usr/include/c++/11/bits/atomic_lockfree_defines.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h \
- /usr/local/include/libglScreenshotHelper/glScreenshotHelper.h \
+ /usr/include/c++/11/bits/erase_if.h \
+ /usr/include/cppunit/extensions/TestFactory.h \
  /usr/include/cppunit/ui/text/TestRunner.h \
  /usr/include/cppunit/ui/text/TextTestRunner.h \
- /usr/include/cppunit/TestRunner.h
+ /usr/include/cppunit/TestRunner.h /usr/include/cppunit/TestSuite.h \
+ /usr/include/cppunit/TestComposite.h /usr/include/cppunit/Test.h

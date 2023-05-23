@@ -1,40 +1,20 @@
-#include <cppunit/extensions/HelperMacros.h>
-#include <cppunit/TestFixture.h>
-#include <cppunit/CompilerOutputter.h>
-#include <cppunit/extensions/TestFactoryRegistry.h>
-#include <cppunit/ui/text/TextTestRunner.h>
-#include <stdio.h>
-#include <sys/types.h>
 #include <dirent.h>
-#include <cstring>
-#include <string>
-#include <cstdint>
-#include <ctime>
-#include <iostream>
 #include <vector>
-#include <FreeImage.h>
-#include "glScreenshotHelperTest.h"
+#include "testFindCatalogUsbName.h"
 #include <libglScreenshotHelper/glScreenshotHelper.h>
-#include <GLFW/glfw3.h>
 
 namespace vniiftri
 {
     namespace oscilloscope_gui
     {
-        CPPUNIT_TEST_SUITE_REGISTRATION (ScreenshotHelperTest);
+        CPPUNIT_TEST_SUITE_REGISTRATION (TestFindCatalogUsbName);
 
-        void ScreenshotHelperTest::setUp()
-        {
+        void TestFindCatalogUsbName::setUp(){}
 
-        }
-
-        void ScreenshotHelperTest::tearDown()
-        {
-
-        }
+        void TestFindCatalogUsbName::tearDown(){}
 
         /*  Функция проверки пути до каталога   */
-        bool directoryExists(const char* path)
+        bool TestFindCatalogUsbName::directoryExists(const char* path)
         {
             if (path == NULL) return false;
 
@@ -52,7 +32,8 @@ namespace vniiftri
             return dirExists;
         }
 
-        void ScreenshotHelperTest::test_i_tals_findCatalogUsbName()
+        /*  Функция сравнивающая названия каталогов, которые нашла функция в библиотеке, с текущими названиями каталогов    */
+        void TestFindCatalogUsbName::test_i_tals_findCatalogUsbName()
         {
             ScreenshotHelper sHelper;
             

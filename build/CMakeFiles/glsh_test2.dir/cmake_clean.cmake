@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.o"
-  "CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.o.d"
+  "CMakeFiles/glsh_test2.dir/tests/testFindCatalogUsbName.cpp.o"
+  "CMakeFiles/glsh_test2.dir/tests/testFindCatalogUsbName.cpp.o.d"
   "CMakeFiles/glsh_test2.dir/tests/testMain.cpp.o"
   "CMakeFiles/glsh_test2.dir/tests/testMain.cpp.o.d"
   "glsh_test2"

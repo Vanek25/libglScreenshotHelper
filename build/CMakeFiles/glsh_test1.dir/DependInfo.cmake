@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/neon/projects/libglScreenshotHelper/tests/testFindCatalogUsbName.cpp" "CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o" "gcc" "CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o.d"
   "/home/neon/projects/libglScreenshotHelper/tests/testMain.cpp" "CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o" "gcc" "CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o.d"
+  "/home/neon/projects/libglScreenshotHelper/tests/testTakeAndLoadScreenshot.cpp" "CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o" "gcc" "CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -83,30 +83,30 @@ CMakeFiles/glsh_test1.dir/tests/testMain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glsh_test1.dir/tests/testMain.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/neon/projects/libglScreenshotHelper/tests/testMain.cpp -o CMakeFiles/glsh_test1.dir/tests/testMain.cpp.s
 
-CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o: CMakeFiles/glsh_test1.dir/flags.make
-CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o: ../tests/testFindCatalogUsbName.cpp
-CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o: CMakeFiles/glsh_test1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/neon/projects/libglScreenshotHelper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o -MF CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o.d -o CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o -c /home/neon/projects/libglScreenshotHelper/tests/testFindCatalogUsbName.cpp
+CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o: CMakeFiles/glsh_test1.dir/flags.make
+CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o: ../tests/testTakeAndLoadScreenshot.cpp
+CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o: CMakeFiles/glsh_test1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/neon/projects/libglScreenshotHelper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o -MF CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o.d -o CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o -c /home/neon/projects/libglScreenshotHelper/tests/testTakeAndLoadScreenshot.cpp
 
-CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/neon/projects/libglScreenshotHelper/tests/testFindCatalogUsbName.cpp > CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.i
+CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/neon/projects/libglScreenshotHelper/tests/testTakeAndLoadScreenshot.cpp > CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.i
 
-CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/neon/projects/libglScreenshotHelper/tests/testFindCatalogUsbName.cpp -o CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.s
+CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/neon/projects/libglScreenshotHelper/tests/testTakeAndLoadScreenshot.cpp -o CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.s
 
 # Object files for target glsh_test1
 glsh_test1_OBJECTS = \
 "CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o" \
-"CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o"
+"CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o"
 
 # External object files for target glsh_test1
 glsh_test1_EXTERNAL_OBJECTS =
 
 glsh_test1: CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o
-glsh_test1: CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o
+glsh_test1: CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o
 glsh_test1: CMakeFiles/glsh_test1.dir/build.make
 glsh_test1: libglScreenshotHelper.so
 glsh_test1: CMakeFiles/glsh_test1.dir/link.txt

@@ -198,17 +198,30 @@ glScreenshotHelper/fast:
 .PHONY : glScreenshotHelper/fast
 
 #=============================================================================
-# Target rules for targets named glsh_test2
+# Target rules for targets named i_tals_takeAndLoadScreenshot_test
 
 # Build rule for target.
-glsh_test2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glsh_test2
-.PHONY : glsh_test2
+i_tals_takeAndLoadScreenshot_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 i_tals_takeAndLoadScreenshot_test
+.PHONY : i_tals_takeAndLoadScreenshot_test
 
 # fast build rule for target.
-glsh_test2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/build
-.PHONY : glsh_test2/fast
+i_tals_takeAndLoadScreenshot_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build
+.PHONY : i_tals_takeAndLoadScreenshot_test/fast
+
+#=============================================================================
+# Target rules for targets named i_tals_findCatalogUsbName_test
+
+# Build rule for target.
+i_tals_findCatalogUsbName_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 i_tals_findCatalogUsbName_test
+.PHONY : i_tals_findCatalogUsbName_test
+
+# fast build rule for target.
+i_tals_findCatalogUsbName_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/build
+.PHONY : i_tals_findCatalogUsbName_test/fast
 
 src/glScreenshotHelper.o: src/glScreenshotHelper.cpp.o
 .PHONY : src/glScreenshotHelper.o
@@ -237,36 +250,37 @@ src/glScreenshotHelper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glScreenshotHelper.dir/build.make CMakeFiles/glScreenshotHelper.dir/src/glScreenshotHelper.cpp.s
 .PHONY : src/glScreenshotHelper.cpp.s
 
-tests/glScreenshotHelperTest.o: tests/glScreenshotHelperTest.cpp.o
-.PHONY : tests/glScreenshotHelperTest.o
+tests/testFindCatalogUsbName.o: tests/testFindCatalogUsbName.cpp.o
+.PHONY : tests/testFindCatalogUsbName.o
 
 # target to build an object file
-tests/glScreenshotHelperTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.o
-.PHONY : tests/glScreenshotHelperTest.cpp.o
+tests/testFindCatalogUsbName.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/tests/testFindCatalogUsbName.cpp.o
+.PHONY : tests/testFindCatalogUsbName.cpp.o
 
-tests/glScreenshotHelperTest.i: tests/glScreenshotHelperTest.cpp.i
-.PHONY : tests/glScreenshotHelperTest.i
+tests/testFindCatalogUsbName.i: tests/testFindCatalogUsbName.cpp.i
+.PHONY : tests/testFindCatalogUsbName.i
 
 # target to preprocess a source file
-tests/glScreenshotHelperTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.i
-.PHONY : tests/glScreenshotHelperTest.cpp.i
+tests/testFindCatalogUsbName.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/tests/testFindCatalogUsbName.cpp.i
+.PHONY : tests/testFindCatalogUsbName.cpp.i
 
-tests/glScreenshotHelperTest.s: tests/glScreenshotHelperTest.cpp.s
-.PHONY : tests/glScreenshotHelperTest.s
+tests/testFindCatalogUsbName.s: tests/testFindCatalogUsbName.cpp.s
+.PHONY : tests/testFindCatalogUsbName.s
 
 # target to generate assembly for a file
-tests/glScreenshotHelperTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.s
-.PHONY : tests/glScreenshotHelperTest.cpp.s
+tests/testFindCatalogUsbName.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/tests/testFindCatalogUsbName.cpp.s
+.PHONY : tests/testFindCatalogUsbName.cpp.s
 
 tests/testMain.o: tests/testMain.cpp.o
 .PHONY : tests/testMain.o
 
 # target to build an object file
 tests/testMain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/testMain.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/tests/testMain.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/tests/testMain.cpp.o
 .PHONY : tests/testMain.cpp.o
 
 tests/testMain.i: tests/testMain.cpp.i
@@ -274,7 +288,8 @@ tests/testMain.i: tests/testMain.cpp.i
 
 # target to preprocess a source file
 tests/testMain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/testMain.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/tests/testMain.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/tests/testMain.cpp.i
 .PHONY : tests/testMain.cpp.i
 
 tests/testMain.s: tests/testMain.cpp.s
@@ -282,8 +297,33 @@ tests/testMain.s: tests/testMain.cpp.s
 
 # target to generate assembly for a file
 tests/testMain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/testMain.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/tests/testMain.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/tests/testMain.cpp.s
 .PHONY : tests/testMain.cpp.s
+
+tests/testTakeAndLoadScreenshot.o: tests/testTakeAndLoadScreenshot.cpp.o
+.PHONY : tests/testTakeAndLoadScreenshot.o
+
+# target to build an object file
+tests/testTakeAndLoadScreenshot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/tests/testTakeAndLoadScreenshot.cpp.o
+.PHONY : tests/testTakeAndLoadScreenshot.cpp.o
+
+tests/testTakeAndLoadScreenshot.i: tests/testTakeAndLoadScreenshot.cpp.i
+.PHONY : tests/testTakeAndLoadScreenshot.i
+
+# target to preprocess a source file
+tests/testTakeAndLoadScreenshot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/tests/testTakeAndLoadScreenshot.cpp.i
+.PHONY : tests/testTakeAndLoadScreenshot.cpp.i
+
+tests/testTakeAndLoadScreenshot.s: tests/testTakeAndLoadScreenshot.cpp.s
+.PHONY : tests/testTakeAndLoadScreenshot.s
+
+# target to generate assembly for a file
+tests/testTakeAndLoadScreenshot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/tests/testTakeAndLoadScreenshot.cpp.s
+.PHONY : tests/testTakeAndLoadScreenshot.cpp.s
 
 # Help Target
 help:
@@ -300,16 +340,20 @@ help:
 	@echo "... test"
 	@echo "... glScreenshotHelper"
 	@echo "... glScreenshotHelper_static"
-	@echo "... glsh_test2"
+	@echo "... i_tals_findCatalogUsbName_test"
+	@echo "... i_tals_takeAndLoadScreenshot_test"
 	@echo "... src/glScreenshotHelper.o"
 	@echo "... src/glScreenshotHelper.i"
 	@echo "... src/glScreenshotHelper.s"
-	@echo "... tests/glScreenshotHelperTest.o"
-	@echo "... tests/glScreenshotHelperTest.i"
-	@echo "... tests/glScreenshotHelperTest.s"
+	@echo "... tests/testFindCatalogUsbName.o"
+	@echo "... tests/testFindCatalogUsbName.i"
+	@echo "... tests/testFindCatalogUsbName.s"
 	@echo "... tests/testMain.o"
 	@echo "... tests/testMain.i"
 	@echo "... tests/testMain.s"
+	@echo "... tests/testTakeAndLoadScreenshot.o"
+	@echo "... tests/testTakeAndLoadScreenshot.i"
+	@echo "... tests/testTakeAndLoadScreenshot.s"
 .PHONY : help
 
 

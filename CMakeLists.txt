@@ -10,8 +10,8 @@ include_directories(../libglScreenshotHelper/include)
 add_library(glScreenshotHelper_static STATIC src/glScreenshotHelper.cpp include/glScreenshotHelper.h)
 add_library(glScreenshotHelper SHARED src/glScreenshotHelper.cpp)
 
-#add_executable(glsh_test1 tests/testMain.cpp tests/testFindCatalogUsbName.cpp)
-add_executable(glsh_test2 tests/testMain.cpp tests/glScreenshotHelperTest.cpp)
+add_executable(i_tals_takeAndLoadScreenshot_test tests/testMain.cpp tests/testTakeAndLoadScreenshot.cpp)
+add_executable(i_tals_findCatalogUsbName_test tests/testMain.cpp tests/testFindCatalogUsbName.cpp)
 
 target_include_directories(glScreenshotHelper PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
@@ -30,8 +30,8 @@ find_library(
     LIB_cppunit cppunit
 )
 
-#target_link_libraries(glsh_test1 cppunit glScreenshotHelper freeimage GL)
-target_link_libraries(glsh_test2 cppunit glScreenshotHelper freeimage GL)
+target_link_libraries(i_tals_takeAndLoadScreenshot_test cppunit glScreenshotHelper freeimage GL)
+target_link_libraries(i_tals_findCatalogUsbName_test cppunit glScreenshotHelper freeimage GL)
 
 install(FILES "${PROJECT_SOURCE_DIR}/build/libglScreenshotHelper.so" DESTINATION /usr/lib/libglScreenshotHelper)
 install(TARGETS glScreenshotHelper DESTINATION ${CMAKE_INSTALL_LIBDIR} PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
@@ -42,6 +42,6 @@ install(FILES "${PROJECT_SOURCE_DIR}/include/glScreenshotHelper.h" DESTINATION /
 option (UNIT_TEST "Build unit tests" ON)
 if (UNIT_TEST)
    enable_testing ()
-   #add_test(NAME glsh_test1 COMMAND glsh_test1)
-   add_test(NAME glsh_test2 COMMAND glsh_test2)
+   add_test(NAME i_tals_takeAndLoadScreenshot_test COMMAND i_tals_takeAndLoadScreenshot_test)
+   add_test(NAME i_tals_findCatalogUsbName_test COMMAND i_tals_findCatalogUsbName_test)
 endif()

@@ -65,7 +65,8 @@ CMAKE_BINARY_DIR = /home/neon/projects/libglScreenshotHelper/build
 # The main recursive "all" target.
 all: CMakeFiles/glScreenshotHelper_static.dir/all
 all: CMakeFiles/glScreenshotHelper.dir/all
-all: CMakeFiles/glsh_test2.dir/all
+all: CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/all
+all: CMakeFiles/i_tals_findCatalogUsbName_test.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -75,7 +76,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/glScreenshotHelper_static.dir/clean
 clean: CMakeFiles/glScreenshotHelper.dir/clean
-clean: CMakeFiles/glsh_test2.dir/clean
+clean: CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/clean
+clean: CMakeFiles/i_tals_findCatalogUsbName_test.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -131,30 +133,56 @@ CMakeFiles/glScreenshotHelper.dir/clean:
 .PHONY : CMakeFiles/glScreenshotHelper.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/glsh_test2.dir
+# Target rules for target CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir
 
 # All Build rule for target.
-CMakeFiles/glsh_test2.dir/all: CMakeFiles/glScreenshotHelper.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/neon/projects/libglScreenshotHelper/build/CMakeFiles --progress-num=5,6,7 "Built target glsh_test2"
-.PHONY : CMakeFiles/glsh_test2.dir/all
+CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/all: CMakeFiles/glScreenshotHelper.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/neon/projects/libglScreenshotHelper/build/CMakeFiles --progress-num=8,9,10 "Built target i_tals_takeAndLoadScreenshot_test"
+.PHONY : CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/glsh_test2.dir/rule: cmake_check_build_system
+CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/neon/projects/libglScreenshotHelper/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/glsh_test2.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/neon/projects/libglScreenshotHelper/build/CMakeFiles 0
-.PHONY : CMakeFiles/glsh_test2.dir/rule
+.PHONY : CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/rule
 
 # Convenience name for target.
-glsh_test2: CMakeFiles/glsh_test2.dir/rule
-.PHONY : glsh_test2
+i_tals_takeAndLoadScreenshot_test: CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/rule
+.PHONY : i_tals_takeAndLoadScreenshot_test
 
 # clean rule for target.
-CMakeFiles/glsh_test2.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/clean
-.PHONY : CMakeFiles/glsh_test2.dir/clean
+CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/build.make CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/clean
+.PHONY : CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/i_tals_findCatalogUsbName_test.dir
+
+# All Build rule for target.
+CMakeFiles/i_tals_findCatalogUsbName_test.dir/all: CMakeFiles/glScreenshotHelper.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/neon/projects/libglScreenshotHelper/build/CMakeFiles --progress-num=5,6,7 "Built target i_tals_findCatalogUsbName_test"
+.PHONY : CMakeFiles/i_tals_findCatalogUsbName_test.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/i_tals_findCatalogUsbName_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/neon/projects/libglScreenshotHelper/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/i_tals_findCatalogUsbName_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/neon/projects/libglScreenshotHelper/build/CMakeFiles 0
+.PHONY : CMakeFiles/i_tals_findCatalogUsbName_test.dir/rule
+
+# Convenience name for target.
+i_tals_findCatalogUsbName_test: CMakeFiles/i_tals_findCatalogUsbName_test.dir/rule
+.PHONY : i_tals_findCatalogUsbName_test
+
+# clean rule for target.
+CMakeFiles/i_tals_findCatalogUsbName_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/i_tals_findCatalogUsbName_test.dir/build.make CMakeFiles/i_tals_findCatalogUsbName_test.dir/clean
+.PHONY : CMakeFiles/i_tals_findCatalogUsbName_test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

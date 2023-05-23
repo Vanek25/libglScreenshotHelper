@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o CMakeFiles/glsh_test1.dir/tests/testFindCatalogUsbName.cpp.o -o glsh_test1  -Wl,-rpath,/home/neon/projects/libglScreenshotHelper/build -lcppunit libglScreenshotHelper.so -lfreeimage -lGL 
+/usr/bin/g++ -g CMakeFiles/glsh_test1.dir/tests/testMain.cpp.o CMakeFiles/glsh_test1.dir/tests/testTakeAndLoadScreenshot.cpp.o -o glsh_test1  -Wl,-rpath,/home/neon/projects/libglScreenshotHelper/build -lcppunit libglScreenshotHelper.so -lfreeimage -lGL 

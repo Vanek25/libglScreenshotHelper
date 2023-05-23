@@ -82,7 +82,6 @@ namespace vniiftri
             }
 
             closedir(dirPath);
-
             delete[] entry;
 
             return catalogNameVec;
@@ -125,8 +124,14 @@ namespace vniiftri
 
                 if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
                 {
-                    D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]);
-                    return -1;
+                    
+                    if(catalogUsbNameVec.size() == 1) // если найден только один "запароленый" каталог и других нет
+                    {
+                        D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]);
+                        return -1; 
+                    }
+
+                    D("[W]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]); 
                 }
 
                 FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);

@@ -18,7 +18,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -35,7 +36,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -57,9 +59,16 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "glsh_test2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-glsh_test2-Debug-297ed68f431fce36b6b6.json",
-					"name" : "glsh_test2",
+					"id" : "i_tals_findCatalogUsbName_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-i_tals_findCatalogUsbName_test-Debug-4e1334037f7a0fab1c2c.json",
+					"name" : "i_tals_findCatalogUsbName_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "i_tals_takeAndLoadScreenshot_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-i_tals_takeAndLoadScreenshot_test-Debug-7a42da03888f72533cba.json",
+					"name" : "i_tals_takeAndLoadScreenshot_test",
 					"projectIndex" : 0
 				}
 			]
