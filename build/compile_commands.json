@@ -28,5 +28,15 @@
   "directory": "/home/neon/projects/libglScreenshotHelper/build",
   "command": "/usr/bin/g++  -I/home/neon/projects/libglScreenshotHelper/../libglScreenshotHelper/include -I/home/neon/projects/libglScreenshotHelper/include -g -std=gnu++17 -o CMakeFiles/i_tals_findCatalogUsbName_test.dir/tests/testFindCatalogUsbName.cpp.o -c /home/neon/projects/libglScreenshotHelper/tests/testFindCatalogUsbName.cpp",
   "file": "/home/neon/projects/libglScreenshotHelper/tests/testFindCatalogUsbName.cpp"
+},
+{
+  "directory": "/home/neon/projects/libglScreenshotHelper/build",
+  "command": "/usr/bin/g++  -I/home/neon/projects/libglScreenshotHelper/../libglScreenshotHelper/include -I/home/neon/projects/libglScreenshotHelper/include -g -std=gnu++17 -o CMakeFiles/i_tals_create_file_name_test.dir/tests/testMain.cpp.o -c /home/neon/projects/libglScreenshotHelper/tests/testMain.cpp",
+  "file": "/home/neon/projects/libglScreenshotHelper/tests/testMain.cpp"
+},
+{
+  "directory": "/home/neon/projects/libglScreenshotHelper/build",
+  "command": "/usr/bin/g++  -I/home/neon/projects/libglScreenshotHelper/../libglScreenshotHelper/include -I/home/neon/projects/libglScreenshotHelper/include -g -std=gnu++17 -o CMakeFiles/i_tals_create_file_name_test.dir/tests/testCreateFileName.cpp.o -c /home/neon/projects/libglScreenshotHelper/tests/testCreateFileName.cpp",
+  "file": "/home/neon/projects/libglScreenshotHelper/tests/testCreateFileName.cpp"
 }
 ]

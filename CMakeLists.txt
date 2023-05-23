@@ -12,6 +12,7 @@ add_library(glScreenshotHelper SHARED src/glScreenshotHelper.cpp)
 
 add_executable(i_tals_takeAndLoadScreenshot_test tests/testMain.cpp tests/testTakeAndLoadScreenshot.cpp)
 add_executable(i_tals_findCatalogUsbName_test tests/testMain.cpp tests/testFindCatalogUsbName.cpp)
+add_executable(i_tals_create_file_name_test tests/testMain.cpp tests/testCreateFileName.cpp)
 
 target_include_directories(glScreenshotHelper PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
@@ -32,6 +33,7 @@ find_library(
 
 target_link_libraries(i_tals_takeAndLoadScreenshot_test cppunit glScreenshotHelper freeimage GL)
 target_link_libraries(i_tals_findCatalogUsbName_test cppunit glScreenshotHelper freeimage GL)
+target_link_libraries(i_tals_create_file_name_test cppunit glScreenshotHelper freeimage GL)
 
 install(FILES "${PROJECT_SOURCE_DIR}/build/libglScreenshotHelper.so" DESTINATION /usr/lib/libglScreenshotHelper)
 install(TARGETS glScreenshotHelper DESTINATION ${CMAKE_INSTALL_LIBDIR} PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
@@ -44,4 +46,5 @@ if (UNIT_TEST)
    enable_testing ()
    add_test(NAME i_tals_takeAndLoadScreenshot_test COMMAND i_tals_takeAndLoadScreenshot_test)
    add_test(NAME i_tals_findCatalogUsbName_test COMMAND i_tals_findCatalogUsbName_test)
+   add_test(NAME i_tals_create_file_name_test COMMAND i_tals_create_file_name_test)
 endif()

@@ -17,7 +17,7 @@ namespace vniiftri
             void setUp();
             void tearDown();
 
-            void test_i_tals_createFileName(const char *type);
+            void test_i_tals_createFileName();
         };
     }
 }

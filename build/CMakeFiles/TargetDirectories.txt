@@ -2,6 +2,7 @@
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/glScreenshotHelper.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/i_tals_findCatalogUsbName_test.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/i_tals_create_file_name_test.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/test.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/edit_cache.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/rebuild_cache.dir

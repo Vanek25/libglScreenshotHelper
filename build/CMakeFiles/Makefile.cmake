@@ -59,4 +59,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/glScreenshotHelper.dir/DependInfo.cmake"
   "CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/DependInfo.cmake"
   "CMakeFiles/i_tals_findCatalogUsbName_test.dir/DependInfo.cmake"
+  "CMakeFiles/i_tals_create_file_name_test.dir/DependInfo.cmake"
   )

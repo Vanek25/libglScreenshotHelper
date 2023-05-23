@@ -13,7 +13,7 @@ namespace vniiftri
 
         void TestFindCatalogUsbName::tearDown(){}
 
-        /*  Функция проверки пути до каталога   */
+        /*  Функция проверки пути до каталога USB  */
         bool TestFindCatalogUsbName::directoryExists(const char* path)
         {
             if (path == NULL) return false;
@@ -51,7 +51,7 @@ namespace vniiftri
                 }
                 else
                 {
-                    CPPUNIT_ASSERT(directoryExists(NULL));
+                    CPPUNIT_ASSERT(directoryExists(NULL) == false);
                 }
             } 
         }

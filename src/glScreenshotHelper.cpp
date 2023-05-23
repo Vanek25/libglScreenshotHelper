@@ -31,10 +31,13 @@ namespace vniiftri
             time_t t = time(nullptr);
             tm *dateTimeNow = localtime(&t);
 
-            char shrtFileName[64];
+            char shrtFileName[100];
             strftime(shrtFileName, sizeof(shrtFileName), "screenshot_%d-%m-%y_%X.", dateTimeNow);
-
-            char *fileName = new char[strlen(shrtFileName) + strlen(type) + 1];
+            
+            //strftime(shrtFileName, sizeof(shrtFileName), "screenshot%a", dateTimeNow);
+            //strcpy(shrtFileName, "aaa");
+             
+            char *fileName = new char[strlen(shrtFileName) + strlen(type)];
 
             strcpy(fileName, shrtFileName);
             strcat(fileName, type);

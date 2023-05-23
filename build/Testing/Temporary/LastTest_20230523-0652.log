@@ -1,24 +1,32 @@
-Start testing: May 23 14:57 MSK
+Start testing: May 23 17:26 MSK
 ----------------------------------------------------------
-2/2 Testing: i_tals_findCatalogUsbName_test
-2/2 Test: i_tals_findCatalogUsbName_test
-Command: "/home/neon/projects/libglScreenshotHelper/build/i_tals_findCatalogUsbName_test"
+3/3 Testing: i_tals_create_file_name_test
+3/3 Test: i_tals_create_file_name_test
+Command: "/home/neon/projects/libglScreenshotHelper/build/i_tals_create_file_name_test"
 Directory: /home/neon/projects/libglScreenshotHelper/build
-"i_tals_findCatalogUsbName_test" start time: May 23 14:57 MSK
+"i_tals_create_file_name_test" start time: May 23 17:26 MSK
 Output:
 ----------------------------------------------------------
-.
+.F
 
 
-OK (1 tests)
+!!!FAILURES!!!
+Test Results:
+Run:  1   Failures: 1   Errors: 0
+
+
+1) test: vniiftri::oscilloscope_gui::TestCreateFileName::test_i_tals_createFileName (F) line: 61 /home/neon/projects/libglScreenshotHelper/tests/testCreateFileName.cpp
+equality assertion failed
+- Expected: screenshot_23-05-23_17:26:23.jpg
+- Actual  : screenshot_jpg
 
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Passed.
-"i_tals_findCatalogUsbName_test" end time: May 23 14:57 MSK
-"i_tals_findCatalogUsbName_test" time elapsed: 00:00:00
+Test Failed.
+"i_tals_create_file_name_test" end time: May 23 17:26 MSK
+"i_tals_create_file_name_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 23 14:57 MSK
+End testing: May 23 17:26 MSK

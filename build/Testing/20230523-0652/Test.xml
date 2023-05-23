@@ -24,19 +24,25 @@
 	ProcessorClockFrequency="3300"
 	>
 	<Testing>
-		<StartDateTime>May 23 14:57 MSK</StartDateTime>
-		<StartTestTime>1684843064</StartTestTime>
+		<StartDateTime>May 23 17:26 MSK</StartDateTime>
+		<StartTestTime>1684851983</StartTestTime>
 		<TestList>
-			<Test>./i_tals_findCatalogUsbName_test</Test>
+			<Test>./i_tals_create_file_name_test</Test>
 		</TestList>
-		<Test Status="passed">
-			<Name>i_tals_findCatalogUsbName_test</Name>
+		<Test Status="failed">
+			<Name>i_tals_create_file_name_test</Name>
 			<Path>.</Path>
-			<FullName>./i_tals_findCatalogUsbName_test</FullName>
-			<FullCommandLine>/home/neon/projects/libglScreenshotHelper/build/i_tals_findCatalogUsbName_test</FullCommandLine>
+			<FullName>./i_tals_create_file_name_test</FullName>
+			<FullCommandLine>/home/neon/projects/libglScreenshotHelper/build/i_tals_create_file_name_test</FullCommandLine>
 			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.00320059</Value>
+					<Value>0.00308199</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -45,24 +51,18 @@
 					<Value>Completed</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/neon/projects/libglScreenshotHelper/build/i_tals_findCatalogUsbName_test</Value>
+					<Value>/home/neon/projects/libglScreenshotHelper/build/i_tals_create_file_name_test</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Environment">
 					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value>.
-
-
-OK (1 tests)
-
-
-</Value>
+					<Value encoding="base64" compression="gzip">eJxVjz9PwzAQxXd/istGhyRNIop0W1UlAgkxpDBbxr2mrlzb+BwE3x6nA1KWp/vz3u901SCEKIpi2L+8foz9MZfinTjBSDzbxCjG2SFAAwCDMnaOxHjv+hh9zPU2A5oNpBxC+HbGnFM0iJ61sTarDySnOU8W7CGSSjQYS2/qRohLShqZlGWpVzt4GDZgjSOEXQP1xd+oduRdHaK/kk5cW/M52WNOkeOLT89kA8V6IfJd17cqHYKgr1lZk35BMVNMxjs456foJErof0LG0gmB/5my7crtY9l2snnCdodtV13DlM17nTIJYGVeVkL8AfddcOs=</Value>
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>May 23 14:57 MSK</EndDateTime>
-		<EndTestTime>1684843064</EndTestTime>
+		<EndDateTime>May 23 17:26 MSK</EndDateTime>
+		<EndTestTime>1684851983</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
