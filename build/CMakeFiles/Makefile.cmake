@@ -57,5 +57,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/glScreenshotHelper_static.dir/DependInfo.cmake"
   "CMakeFiles/glScreenshotHelper.dir/DependInfo.cmake"
-  "CMakeFiles/glsh_test.dir/DependInfo.cmake"
+  "CMakeFiles/glsh_test2.dir/DependInfo.cmake"
   )

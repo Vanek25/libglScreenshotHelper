@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-bca5a5efa34eea725e78.json",
+					"jsonFile" : "directory-.-Debug-e340a3e7d8a862cec84d.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.18"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "glScreenshotHelper::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-glScreenshotHelper-Debug-cfd344bf48fecd85f21d.json",
+					"jsonFile" : "target-glScreenshotHelper-Debug-f36b80ee362c67421481.json",
 					"name" : "glScreenshotHelper",
 					"projectIndex" : 0
 				},
@@ -57,9 +57,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "glsh_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-glsh_test-Debug-73a63a409c1dfd4bad92.json",
-					"name" : "glsh_test",
+					"id" : "glsh_test2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-glsh_test2-Debug-297ed68f431fce36b6b6.json",
+					"name" : "glsh_test2",
 					"projectIndex" : 0
 				}
 			]

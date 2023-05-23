@@ -1,6 +1,6 @@
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/glScreenshotHelper_static.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/glScreenshotHelper.dir
-/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/glsh_test.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/glsh_test2.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/test.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/edit_cache.dir
 /home/neon/projects/libglScreenshotHelper/build/CMakeFiles/rebuild_cache.dir

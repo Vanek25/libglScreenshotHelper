@@ -1,7 +1,6 @@
-CMakeFiles/glsh_test.dir/tests/testMain.cpp.o: \
- /home/neon/projects/libglScreenshotHelper/tests/testMain.cpp \
+CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.o: \
+ /home/neon/projects/libglScreenshotHelper/tests/glScreenshotHelperTest.cpp \
  /usr/include/stdc-predef.h \
- /home/neon/projects/libglScreenshotHelper/tests/glScreenshotHelperTest.h \
  /usr/include/cppunit/extensions/HelperMacros.h \
  /usr/include/cppunit/TestCaller.h /usr/include/cppunit/Exception.h \
  /usr/include/cppunit/Portability.h /usr/include/cppunit/config-auto.h \
@@ -221,7 +220,19 @@ CMakeFiles/glsh_test.dir/tests/testMain.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /usr/local/include/libglScreenshotHelper/glScreenshotHelper.h \
- /usr/include/cppunit/ui/text/TestRunner.h \
+ /usr/include/cppunit/CompilerOutputter.h \
+ /usr/include/cppunit/Outputter.h \
  /usr/include/cppunit/ui/text/TextTestRunner.h \
- /usr/include/cppunit/TestRunner.h
+ /usr/include/cppunit/TestRunner.h /usr/include/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/11/ctime /usr/include/FreeImage.h \
+ /usr/include/inttypes.h \
+ /home/neon/projects/libglScreenshotHelper/tests/glScreenshotHelperTest.h \
+ /usr/local/include/libglScreenshotHelper/glScreenshotHelper.h \
+ /usr/local/include/GLFW/glfw3.h /usr/include/GL/gl.h \
+ /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h

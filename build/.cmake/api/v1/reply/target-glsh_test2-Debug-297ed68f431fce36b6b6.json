@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libglScreenshotHelper.so"
+			"path" : "glsh_test2"
 		}
 	],
 	"backtrace" : 1,
@@ -10,10 +10,9 @@
 	{
 		"commands" : 
 		[
-			"add_library",
-			"install",
-			"include_directories",
-			"target_include_directories"
+			"add_executable",
+			"target_link_libraries",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -27,25 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 14,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 35,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
 				"line" : 8,
-				"parent" : 0
-			},
-			{
-				"command" : 3,
-				"file" : 0,
-				"line" : 15,
 				"parent" : 0
 			}
 		]
@@ -56,16 +49,10 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -fPIC"
+					"fragment" : "-g"
 				},
 				{
 					"fragment" : "-std=gnu++17"
-				}
-			],
-			"defines" : 
-			[
-				{
-					"define" : "glScreenshotHelper_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -75,7 +62,7 @@
 					"path" : "/home/neon/projects/libglScreenshotHelper/../libglScreenshotHelper/include"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 2,
 					"path" : "/home/neon/projects/libglScreenshotHelper/include"
 				}
 			],
@@ -90,42 +77,60 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"id" : "glScreenshotHelper::@6890427a1f51a3e7e1df",
-	"install" : 
-	{
-		"destinations" : 
-		[
-			{
-				"backtrace" : 2,
-				"path" : "lib"
-			},
-			{
-				"backtrace" : 2,
-				"path" : "lib"
-			}
-		],
-		"prefix" : 
+	"dependencies" : 
+	[
 		{
-			"path" : "/usr/local"
+			"backtrace" : 2,
+			"id" : "glScreenshotHelper::@6890427a1f51a3e7e1df"
 		}
-	},
+	],
+	"id" : "glsh_test2::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/neon/projects/libglScreenshotHelper/build",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lcppunit",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libglScreenshotHelper.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lfreeimage",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lGL",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "glScreenshotHelper",
-	"nameOnDisk" : "libglScreenshotHelper.so",
+	"name" : "glsh_test2",
+	"nameOnDisk" : "glsh_test2",
 	"paths" : 
 	{
 		"build" : ".",
@@ -137,7 +142,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -146,9 +152,15 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/glScreenshotHelper.cpp",
+			"path" : "tests/testMain.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/glScreenshotHelperTest.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "EXECUTABLE"
 }

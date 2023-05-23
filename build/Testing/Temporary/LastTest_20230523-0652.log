@@ -1,20 +1,24 @@
-Start testing: May 22 15:44 MSK
+Start testing: May 23 12:52 MSK
 ----------------------------------------------------------
 1/1 Testing: glsh_test
 1/1 Test: glsh_test
 Command: "/home/neon/projects/libglScreenshotHelper/build/glsh_test"
 Directory: /home/neon/projects/libglScreenshotHelper/build
-"glsh_test" start time: May 22 15:44 MSK
+"glsh_test" start time: May 23 12:52 MSK
 Output:
 ----------------------------------------------------------
-vniiftri::oscilloscope_gui::ScreenshotHelperTest::testCreateFilename : OK
-OK (1)
+..
+
+
+OK (2 tests)
+
+
 <end of output>
-Test time =   0.00 sec
+Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"glsh_test" end time: May 22 15:44 MSK
+"glsh_test" end time: May 23 12:52 MSK
 "glsh_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 22 15:44 MSK
+End testing: May 23 12:52 MSK

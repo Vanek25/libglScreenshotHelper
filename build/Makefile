@@ -198,17 +198,17 @@ glScreenshotHelper/fast:
 .PHONY : glScreenshotHelper/fast
 
 #=============================================================================
-# Target rules for targets named glsh_test
+# Target rules for targets named glsh_test2
 
 # Build rule for target.
-glsh_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glsh_test
-.PHONY : glsh_test
+glsh_test2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glsh_test2
+.PHONY : glsh_test2
 
 # fast build rule for target.
-glsh_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test.dir/build.make CMakeFiles/glsh_test.dir/build
-.PHONY : glsh_test/fast
+glsh_test2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/build
+.PHONY : glsh_test2/fast
 
 src/glScreenshotHelper.o: src/glScreenshotHelper.cpp.o
 .PHONY : src/glScreenshotHelper.o
@@ -242,7 +242,7 @@ tests/glScreenshotHelperTest.o: tests/glScreenshotHelperTest.cpp.o
 
 # target to build an object file
 tests/glScreenshotHelperTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test.dir/build.make CMakeFiles/glsh_test.dir/tests/glScreenshotHelperTest.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.o
 .PHONY : tests/glScreenshotHelperTest.cpp.o
 
 tests/glScreenshotHelperTest.i: tests/glScreenshotHelperTest.cpp.i
@@ -250,7 +250,7 @@ tests/glScreenshotHelperTest.i: tests/glScreenshotHelperTest.cpp.i
 
 # target to preprocess a source file
 tests/glScreenshotHelperTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test.dir/build.make CMakeFiles/glsh_test.dir/tests/glScreenshotHelperTest.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.i
 .PHONY : tests/glScreenshotHelperTest.cpp.i
 
 tests/glScreenshotHelperTest.s: tests/glScreenshotHelperTest.cpp.s
@@ -258,7 +258,7 @@ tests/glScreenshotHelperTest.s: tests/glScreenshotHelperTest.cpp.s
 
 # target to generate assembly for a file
 tests/glScreenshotHelperTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test.dir/build.make CMakeFiles/glsh_test.dir/tests/glScreenshotHelperTest.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/glScreenshotHelperTest.cpp.s
 .PHONY : tests/glScreenshotHelperTest.cpp.s
 
 tests/testMain.o: tests/testMain.cpp.o
@@ -266,7 +266,7 @@ tests/testMain.o: tests/testMain.cpp.o
 
 # target to build an object file
 tests/testMain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test.dir/build.make CMakeFiles/glsh_test.dir/tests/testMain.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/testMain.cpp.o
 .PHONY : tests/testMain.cpp.o
 
 tests/testMain.i: tests/testMain.cpp.i
@@ -274,7 +274,7 @@ tests/testMain.i: tests/testMain.cpp.i
 
 # target to preprocess a source file
 tests/testMain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test.dir/build.make CMakeFiles/glsh_test.dir/tests/testMain.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/testMain.cpp.i
 .PHONY : tests/testMain.cpp.i
 
 tests/testMain.s: tests/testMain.cpp.s
@@ -282,7 +282,7 @@ tests/testMain.s: tests/testMain.cpp.s
 
 # target to generate assembly for a file
 tests/testMain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test.dir/build.make CMakeFiles/glsh_test.dir/tests/testMain.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glsh_test2.dir/build.make CMakeFiles/glsh_test2.dir/tests/testMain.cpp.s
 .PHONY : tests/testMain.cpp.s
 
 # Help Target
@@ -300,7 +300,7 @@ help:
 	@echo "... test"
 	@echo "... glScreenshotHelper"
 	@echo "... glScreenshotHelper_static"
-	@echo "... glsh_test"
+	@echo "... glsh_test2"
 	@echo "... src/glScreenshotHelper.o"
 	@echo "... src/glScreenshotHelper.i"
 	@echo "... src/glScreenshotHelper.s"

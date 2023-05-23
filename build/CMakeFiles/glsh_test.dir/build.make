@@ -108,10 +108,7 @@ glsh_test_EXTERNAL_OBJECTS =
 glsh_test: CMakeFiles/glsh_test.dir/tests/testMain.cpp.o
 glsh_test: CMakeFiles/glsh_test.dir/tests/glScreenshotHelperTest.cpp.o
 glsh_test: CMakeFiles/glsh_test.dir/build.make
-glsh_test: /usr/local/lib/libglfw3.a
 glsh_test: libglScreenshotHelper.so
-glsh_test: /usr/lib/x86_64-linux-gnu/librt.a
-glsh_test: /usr/lib/x86_64-linux-gnu/libm.so
 glsh_test: CMakeFiles/glsh_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/neon/projects/libglScreenshotHelper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable glsh_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glsh_test.dir/link.txt --verbose=$(VERBOSE)

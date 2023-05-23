@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site BuildName="(empty)"
-	BuildStamp="20230522-1244-Experimental"
+	BuildStamp="20230523-0652-Experimental"
 	Name="(empty)"
 	Generator="ctest-3.22.1"
 	CompilerName=""
@@ -24,8 +24,8 @@
 	ProcessorClockFrequency="3300"
 	>
 	<Testing>
-		<StartDateTime>May 22 15:44 MSK</StartDateTime>
-		<StartTestTime>1684759477</StartTestTime>
+		<StartDateTime>May 23 12:52 MSK</StartDateTime>
+		<StartTestTime>1684835529</StartTestTime>
 		<TestList>
 			<Test>./glsh_test</Test>
 		</TestList>
@@ -36,7 +36,7 @@
 			<FullCommandLine>/home/neon/projects/libglScreenshotHelper/build/glsh_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.00103782</Value>
+					<Value>0.0232875</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -51,14 +51,18 @@
 					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value>vniiftri::oscilloscope_gui::ScreenshotHelperTest::testCreateFilename : OK
-OK (1)
+					<Value>..
+
+
+OK (2 tests)
+
+
 </Value>
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>May 22 15:44 MSK</EndDateTime>
-		<EndTestTime>1684759477</EndTestTime>
+		<EndDateTime>May 23 12:52 MSK</EndDateTime>
+		<EndTestTime>1684835529</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

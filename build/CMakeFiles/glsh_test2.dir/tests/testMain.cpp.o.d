@@ -1,4 +1,4 @@
-CMakeFiles/glsh_test.dir/tests/testMain.cpp.o: \
+CMakeFiles/glsh_test2.dir/tests/testMain.cpp.o: \
  /home/neon/projects/libglScreenshotHelper/tests/testMain.cpp \
  /usr/include/stdc-predef.h \
  /home/neon/projects/libglScreenshotHelper/tests/glScreenshotHelperTest.h \

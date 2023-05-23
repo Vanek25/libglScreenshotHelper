@@ -88,11 +88,12 @@ namespace vniiftri
             return catalogNameVec;
         }
 
-        void ScreenshotHelper::i_tals_takeAndLoadScreenshot(const char *type, int width, int height)
+        int ScreenshotHelper::i_tals_takeAndLoadScreenshot(const char *type, int width, int height)
         {
             if ((strcmp(type, "bmp")) != 0 && (strcmp(type, "jpg")) != 0 && (strcmp(type, "png")) != 0)
             {
                 D("[E]", "Неверный тип скриншота: ", type);
+                return -1;
             }
 
             std::vector<std::string> catalogUsbNameVec = i_tals_findCatalogUsbName();
@@ -101,18 +102,17 @@ namespace vniiftri
             if (fileName == NULL)
             {
                 D("[E]", "Не удалось создать название файла скриношта. Возможно проблемы со встроенным временем!", "");
+                return -1;
             }
 
             BYTE *pixels = new BYTE[3 * width * height];
             glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
-            
-            glBegin(GL_LINE);
-            glEnd();
 
             FIBITMAP *image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
             if (image == NULL)
             {
-                D("[E]", "Не удалось сконвертировать необработанное растровое изображение в растровое изображение!", ""); 
+                D("[E]", "Не удалось сконвертировать необработанное растровое изображение в растровое изображение!", "");
+                return -1; 
             }
 
             for(std::vector<int>::size_type i = 0; i < catalogUsbNameVec.size(); i++)
@@ -126,6 +126,7 @@ namespace vniiftri
                 if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
                 {
                     D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]);
+                    return -1;
                 }
 
                 FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);
@@ -135,7 +136,9 @@ namespace vniiftri
             FreeImage_Unload(image);
 
             delete[] fileName;
-            delete[] pixels; 
+            delete[] pixels;
+
+            return 0; 
         }
     }
 }

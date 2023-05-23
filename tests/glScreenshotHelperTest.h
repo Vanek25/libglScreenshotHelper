@@ -7,17 +7,19 @@ namespace vniiftri
 {
     namespace oscilloscope_gui
     {
-        class ScreenshotHelperTest : public CPPUNIT_NS :: TestFixture
+        class ScreenshotHelperTest : public CppUnit::TestFixture
         {
             CPPUNIT_TEST_SUITE (ScreenshotHelperTest);
-                CPPUNIT_TEST (testCreateFilename);
+                CPPUNIT_TEST (test_i_tals_findCatalogUsbName);
+                CPPUNIT_TEST (test_i_tals_takeAndLoadScreenshot);
             CPPUNIT_TEST_SUITE_END ();
 
             public:
             void setUp();
             void tearDown();
 
-            void testCreateFilename();
+            void test_i_tals_findCatalogUsbName();
+            void test_i_tals_takeAndLoadScreenshot();
             int runTests();
             int main();
         };
