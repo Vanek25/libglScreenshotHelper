@@ -1,8 +1,0 @@
-glsh_test 22 0.00105852
-glsh_test1 1 0.0223991
-glsh_test2 1 0.00342584
-i_tals_takeAndLoadScreenshot_test 58 0.00644701
-i_tals_findCatalogUsbName_test 63 0.00120987
-i_tals_create_file_name_test 4 0.0031765
----
-i_tals_create_file_name_test

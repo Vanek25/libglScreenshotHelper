@@ -7,6 +7,8 @@
 #include <string>
 #include <cstdint>
 #include <ctime>
+#include <chrono>
+#include <iomanip>
 #include <iostream>
 #include <vector>
 #include <FreeImage.h>
@@ -26,21 +28,13 @@ namespace vniiftri
 {
     namespace oscilloscope_gui
     {
-        char *ScreenshotHelper::i_tals_createFileName(const char *type)
+        std::string ScreenshotHelper::i_tals_createFileName(const std::string screenshotType)
         {
-            time_t t = time(nullptr);
-            tm *dateTimeNow = localtime(&t);
+            std::time_t dateTimeNow = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+            std::stringstream dateStr;
 
-            char shrtFileName[100];
-            strftime(shrtFileName, sizeof(shrtFileName), "screenshot_%d-%m-%y_%X.", dateTimeNow);
-            
-            //strftime(shrtFileName, sizeof(shrtFileName), "screenshot%a", dateTimeNow);
-            //strcpy(shrtFileName, "aaa");
-             
-            char *fileName = new char[strlen(shrtFileName) + strlen(type)];
-
-            strcpy(fileName, shrtFileName);
-            strcat(fileName, type);
+            dateStr << std::put_time(std::localtime(&dateTimeNow), "%d-%m-%y_%T.");
+            std::string fileName = std::string("screenshot_") + std::string(dateStr.str()) + std::string(screenshotType);
 
             return fileName;
         }
@@ -99,9 +93,9 @@ namespace vniiftri
             }
 
             std::vector<std::string> catalogUsbNameVec = i_tals_findCatalogUsbName();
-            char *fileName = i_tals_createFileName(type);
+            std::string fileName = i_tals_createFileName(type);
 
-            if (fileName == NULL)
+            if (fileName == "")
             {
                 D("[E]", "Не удалось создать название файла скриношта. Возможно проблемы со встроенным временем!", "");
                 return -1;
@@ -117,15 +111,17 @@ namespace vniiftri
                 return -1; 
             }
 
+            char * charFileName = fileName.data();
+
             for(std::vector<int>::size_type i = 0; i < catalogUsbNameVec.size(); i++)
             {
-                char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(catalogUsbNameVec[i].c_str()) + strlen(fileName) + 1];
+                char *pathToLoadScreenshot = new char[strlen(DEFAULT_PATH) + strlen(catalogUsbNameVec[i].c_str()) + strlen(charFileName) + 1];
 
                 strcpy(pathToLoadScreenshot, DEFAULT_PATH);
                 strcat(pathToLoadScreenshot, catalogUsbNameVec[i].c_str());
-                strcat(pathToLoadScreenshot, fileName);
+                strcat(pathToLoadScreenshot, charFileName);
 
-                if (!FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0))
+                if (!FreeImage_Save(FreeImage_GetFIFFromFilename(charFileName), image, pathToLoadScreenshot, 0))
                 {
                     
                     if(catalogUsbNameVec.size() == 1) // если найден только один "запароленый" каталог и других нет
@@ -137,13 +133,12 @@ namespace vniiftri
                     D("[W]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]); 
                 }
 
-                FreeImage_Save(FreeImage_GetFIFFromFilename(fileName), image, pathToLoadScreenshot, 0);
+                FreeImage_Save(FreeImage_GetFIFFromFilename(charFileName), image, pathToLoadScreenshot, 0);
                 delete[] pathToLoadScreenshot;
             }
             
             FreeImage_Unload(image);
 
-            delete[] fileName;
             delete[] pixels;
 
             return 0; 

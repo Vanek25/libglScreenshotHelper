@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/glsh_test.dir/tests/testMain.cpp.o CMakeFiles/glsh_test.dir/tests/glScreenshotHelperTest.cpp.o -o glsh_test  -Wl,-rpath,/home/neon/projects/libglScreenshotHelper/build -lcppunit libglScreenshotHelper.so -lfreeimage -lGL 

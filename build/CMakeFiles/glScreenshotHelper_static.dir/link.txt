@@ -1,2 +1,0 @@
-/usr/bin/ar qc libglScreenshotHelper_static.a CMakeFiles/glScreenshotHelper_static.dir/src/glScreenshotHelper.cpp.o
-/usr/bin/ranlib libglScreenshotHelper_static.a

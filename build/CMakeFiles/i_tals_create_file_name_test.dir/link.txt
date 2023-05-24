@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/i_tals_create_file_name_test.dir/tests/testMain.cpp.o CMakeFiles/i_tals_create_file_name_test.dir/tests/testCreateFileName.cpp.o -o i_tals_create_file_name_test  -Wl,-rpath,/home/neon/projects/libglScreenshotHelper/build -lcppunit libglScreenshotHelper.so -lfreeimage -lGL 
