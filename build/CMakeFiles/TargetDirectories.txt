@@ -1,0 +1,12 @@
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/glScreenshotHelper_static.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/glScreenshotHelper.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/i_tals_findCatalogUsbName_test.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/i_tals_create_file_name_test.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/test.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/edit_cache.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/rebuild_cache.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/list_install_components.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/install.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/install/local.dir
+/home/neon/projects/libglScreenshotHelper/build/CMakeFiles/install/strip.dir

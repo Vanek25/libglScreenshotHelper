@@ -13,19 +13,17 @@ namespace vniiftri
 
         void TakeAndLoadScreenshotTest::test_i_tals_takeAndLoadScreenshot()
         {
-            ScreenshotHelper sHelper;
-
             /*  Проверка на создание скриншотов с разным типом и размером окна  */
-            CPPUNIT_ASSERT(sHelper.i_tals_takeAndLoadScreenshot("bmp", 1000, 700) == 0);
-            CPPUNIT_ASSERT(sHelper.i_tals_takeAndLoadScreenshot("png", 100, 60) == 0);
-            CPPUNIT_ASSERT(sHelper.i_tals_takeAndLoadScreenshot("jpg", 700, 600) == 0);
-            CPPUNIT_ASSERT(sHelper.i_tals_takeAndLoadScreenshot("bmp", 450, 200) == 0);
-            CPPUNIT_ASSERT(sHelper.i_tals_takeAndLoadScreenshot("png", 633, 322) == 0);
-            CPPUNIT_ASSERT(sHelper.i_tals_takeAndLoadScreenshot("jpg", 800, 600) == 0);
+            CPPUNIT_ASSERT(ScreenshotHelper::i_tals_takeAndLoadScreenshot("bmp", 1000, 700) == 0);
+            CPPUNIT_ASSERT(ScreenshotHelper::i_tals_takeAndLoadScreenshot("png", 100, 60) == 0);
+            CPPUNIT_ASSERT(ScreenshotHelper::i_tals_takeAndLoadScreenshot("jpg", 700, 600) == 0);
+            CPPUNIT_ASSERT(ScreenshotHelper::i_tals_takeAndLoadScreenshot("bmp", 450, 200) == 0);
+            CPPUNIT_ASSERT(ScreenshotHelper::i_tals_takeAndLoadScreenshot("png", 633, 322) == 0);
+            CPPUNIT_ASSERT(ScreenshotHelper::i_tals_takeAndLoadScreenshot("jpg", 800, 600) == 0);
 
             /*  Проверка на создание скриншотов с неверным типом    */
-            CPPUNIT_ASSERT(sHelper.i_tals_takeAndLoadScreenshot("фывафвыафвыаа", 800, 600) == -1); // -1 возвращает функция в случае ошибки
-            CPPUNIT_ASSERT(sHelper.i_tals_takeAndLoadScreenshot("jppg", 1200, 1080) == -1);
+            CPPUNIT_ASSERT(ScreenshotHelper::i_tals_takeAndLoadScreenshot("фывафвыафвыаа", 800, 600) == -1); // -1 возвращает функция в случае ошибки
+            CPPUNIT_ASSERT(ScreenshotHelper::i_tals_takeAndLoadScreenshot("jppg", 1200, 1080) == -1);
         }
     }
 }

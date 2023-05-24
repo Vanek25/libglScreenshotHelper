@@ -1,4 +1,3 @@
-#include <dirent.h>
 #include <vector>
 #include "testFindCatalogUsbName.h"
 #include <libglScreenshotHelper/glScreenshotHelper.h>
@@ -15,10 +14,8 @@ namespace vniiftri
 
         void TestFindCatalogUsbName::test_i_tals_findCatalogUsbName()
         {
-            ScreenshotHelper sHelper;
-            
             std::vector<std::string> vecPathsToDirs;
-            std::vector<std::string> vecPathToDirsFromLib = sHelper.i_tals_findCatalogUsbName(); 
+            std::vector<std::string> vecPathToDirsFromLib = ScreenshotHelper::i_tals_findCatalogUsbName(); 
             
             vecPathsToDirs.push_back("/f1/");
             vecPathsToDirs.push_back("/f2/");

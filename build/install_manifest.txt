@@ -1,0 +1,3 @@
+/usr/lib/libglScreenshotHelper/libglScreenshotHelper.so
+/usr/local/lib/libglScreenshotHelper.so
+/usr/local/include/libglScreenshotHelper/glScreenshotHelper.h

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20230524-1109-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.22.1"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="neon-HM570"
+	OSRelease="5.15.0-71-generic"
+	OSVersion="#78-Ubuntu SMP Tue Apr 18 09:00:29 UTC 2023"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="141"
+	ProcessorCacheSize="24576"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="15775"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3300"
+	>
+	<Testing>
+		<StartDateTime>May 24 16:53 MSK</StartDateTime>
+		<StartTestTime>1684936390</StartTestTime>
+		<TestList>
+			<Test>./i_tals_create_file_name_test</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>i_tals_create_file_name_test</Name>
+			<Path>.</Path>
+			<FullName>./i_tals_create_file_name_test</FullName>
+			<FullCommandLine>/home/neon/projects/libglScreenshotHelper/build/i_tals_create_file_name_test</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>2.00399</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/neon/projects/libglScreenshotHelper/build/i_tals_create_file_name_test</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJx9jz9PxDAMxfd8Cnfjhv6nDN5OqBVIiKEHcxR6vl5OuSTEKYJvT9oB6RYW69l+72e5GIQQWZYN++eX97E/JCneiCOMxIuJjGJcLALUADAobZZAjFvXh+BC0lUC1DuIKYTwZbU+xaARHU/amFSdJzkvabJiHwOpSIM29KquhLimpJZRGZbTzQ7uhh0YbQmhbaA8uyuVlpwtfXAXmiKXRn/M5pBSZPns4hMZT6FcibzV21vF5L2gz0UZHX9AMVOI2lk4pafoKHLov33C0hGB/5iyuc+rLm9aWT9g12JXFRc/J/N+iokE8J+5bjazEL8IB3Sm====</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 24 16:53 MSK</EndDateTime>
+		<EndTestTime>1684936392</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

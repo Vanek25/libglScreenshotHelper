@@ -1,10 +1,7 @@
-#include <dirent.h>
-#include <vector>
-#include <ctime>
-#include <cstring>
 #include <string>
-#include <iostream>
 #include <chrono>
+#include <ctime>
+#include <unistd.h>
 #include "testCreateFileName.h"
 #include <libglScreenshotHelper/glScreenshotHelper.h>
 
@@ -20,20 +17,28 @@ namespace vniiftri
 
         void TestCreateFileName::test_i_tals_createFileName()
         {
-            ScreenshotHelper sHelper;
+            /*  Сравнение названий файла со временем  */
+            std::chrono::seconds seconds(65);
+            std::chrono::minutes mm = std::chrono::duration_cast<std::chrono::minutes>(seconds);
+            
+            int delay = 2;
+            std::string testTime = ScreenshotHelper::i_tals_createFileName("jpg");
 
+            CPPUNIT_ASSERT_EQUAL(testTime, ScreenshotHelper::i_tals_createFileName("jpg"));
+
+            /*   Сравнение названий файла без времени   */
             std::string fileName = std::string("screenshot_") + std::string("24-05-23") + (".jpg");
-            std::string fileNameFromLib = sHelper.i_tals_createFileName("jpg").erase(19, 9);
+            std::string fileNameFromLib = ScreenshotHelper::i_tals_createFileName("jpg").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);
 
             fileName = std::string("screenshot_") + std::string("24-05-23") + (".png");
-            fileNameFromLib = sHelper.i_tals_createFileName("png").erase(19, 9);
+            fileNameFromLib = ScreenshotHelper::i_tals_createFileName("png").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);
 
             fileName = std::string("screenshot_") + std::string("24-05-23") + (".bmp");
-            fileNameFromLib = sHelper.i_tals_createFileName("bmp").erase(19, 9);
+            fileNameFromLib = ScreenshotHelper::i_tals_createFileName("bmp").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);
         }

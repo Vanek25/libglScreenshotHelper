@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-5e2d74bf1f8c247d42c5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tals",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "glScreenshotHelper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-glScreenshotHelper-Debug-537cfa56ca3d7a589347.json",
+					"name" : "glScreenshotHelper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "glScreenshotHelper_static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-glScreenshotHelper_static-Debug-244f81db8aa878a351a0.json",
+					"name" : "glScreenshotHelper_static",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "i_tals_create_file_name_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-i_tals_create_file_name_test-Debug-86cbe3ec999f0e48e35b.json",
+					"name" : "i_tals_create_file_name_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "i_tals_findCatalogUsbName_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-i_tals_findCatalogUsbName_test-Debug-e7c2dc67a563fe2af08b.json",
+					"name" : "i_tals_findCatalogUsbName_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "i_tals_takeAndLoadScreenshot_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-i_tals_takeAndLoadScreenshot_test-Debug-aff9247cadaa804e3784.json",
+					"name" : "i_tals_takeAndLoadScreenshot_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/neon/projects/libglScreenshotHelper/build",
+		"source" : "/home/neon/projects/libglScreenshotHelper"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
