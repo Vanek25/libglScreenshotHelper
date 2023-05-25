@@ -22,7 +22,7 @@
 #define D(TYPE, MESSAGE, VALUE)
 #endif
 
-#define DEFAULT_PATH "/home/neon/media"
+#define DEFAULT_PATH "/home/ubu/media"
 
 namespace vniiftri
 {

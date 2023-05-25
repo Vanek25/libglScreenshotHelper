@@ -1,4 +1,4 @@
-#include "libglScreenshotHelper/glScreenshotHelper.h"
+#include "glScreenshotHelper.h"
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
 

@@ -10,9 +10,9 @@ include_directories(../libglScreenshotHelper/include)
 add_library(glScreenshotHelper_static STATIC src/glScreenshotHelper.cpp include/glScreenshotHelper.h)
 add_library(glScreenshotHelper SHARED src/glScreenshotHelper.cpp)
 
-add_executable(i_tals_takeAndLoadScreenshot_test tests/testMain.cpp tests/testTakeAndLoadScreenshot.cpp)
-add_executable(i_tals_findCatalogUsbName_test tests/testMain.cpp tests/testFindCatalogUsbName.cpp)
-add_executable(i_tals_create_file_name_test tests/testMain.cpp tests/testCreateFileName.cpp)
+add_executable(i_tals_takeAndLoadScreenshot_test tests/testMain.cpp tests/testTakeAndLoadScreenshot.cpp include/glScreenshotHelper.h)
+add_executable(i_tals_findCatalogUsbName_test tests/testMain.cpp tests/testFindCatalogUsbName.cpp include/glScreenshotHelper.h)
+add_executable(i_tals_create_file_name_test tests/testMain.cpp tests/testCreateFileName.cpp include/glScreenshotHelper.h)
 
 target_include_directories(glScreenshotHelper PUBLIC ${PROJECT_SOURCE_DIR}/include)
 

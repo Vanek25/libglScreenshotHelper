@@ -1,6 +1,6 @@
 #include <vector>
 #include "testFindCatalogUsbName.h"
-#include <libglScreenshotHelper/glScreenshotHelper.h>
+#include "glScreenshotHelper.h"
 
 namespace vniiftri
 {
@@ -17,10 +17,8 @@ namespace vniiftri
             std::vector<std::string> vecPathsToDirs;
             std::vector<std::string> vecPathToDirsFromLib = ScreenshotHelper::i_tals_findCatalogUsbName(); 
             
-            vecPathsToDirs.push_back("/f1/");
-            vecPathsToDirs.push_back("/f2/");
-            vecPathsToDirs.push_back("/as/");
-  
+            vecPathsToDirs.push_back("/papka/");
+
             bool isSimilar;
 
             vecPathsToDirs == vecPathToDirsFromLib ? isSimilar = true : isSimilar = false;

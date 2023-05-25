@@ -1,5 +1,0 @@
-i_tals_takeAndLoadScreenshot_test 32 0.0604397
-i_tals_findCatalogUsbName_test 32 0.00350937
-i_tals_create_file_name_test 14 1.07523
----
-i_tals_create_file_name_test

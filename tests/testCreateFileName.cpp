@@ -3,7 +3,7 @@
 #include <ctime>
 #include <unistd.h>
 #include "testCreateFileName.h"
-#include <libglScreenshotHelper/glScreenshotHelper.h>
+#include "glScreenshotHelper.h"
 
 namespace vniiftri
 {

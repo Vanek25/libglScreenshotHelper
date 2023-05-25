@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GL_SCREENSHOT_HELPER_H
 #define GL_SCREENSHOT_HELPER_H
 
