@@ -1,0 +1,12 @@
+add_executable(i_tals_takeAndLoadScreenshot_test testMain.cpp testTakeAndLoadScreenshot.cpp)
+add_executable(i_tals_findCatalogUsbName_test testMain.cpp testFindCatalogUsbName.cpp)
+add_executable(i_tals_create_file_name_test testMain.cpp testCreateFileName.cpp)
+
+target_link_libraries(i_tals_takeAndLoadScreenshot_test cppunit glScreenshotHelper freeimage GL)
+target_link_libraries(i_tals_findCatalogUsbName_test cppunit glScreenshotHelper freeimage GL)
+target_link_libraries(i_tals_create_file_name_test cppunit glScreenshotHelper freeimage GL)
+
+add_test(NAME i_tals_takeAndLoadScreenshot_test COMMAND i_tals_takeAndLoadScreenshot_test)
+add_test(NAME i_tals_findCatalogUsbName_test COMMAND i_tals_findCatalogUsbName_test)
+add_test(NAME i_tals_create_file_name_test COMMAND i_tals_create_file_name_test)
+

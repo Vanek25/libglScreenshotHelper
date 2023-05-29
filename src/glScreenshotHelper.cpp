@@ -1,4 +1,3 @@
-#include <GLFW/glfw3.h>
 #include <GL/gl.h>
 #include <stdio.h>
 #include <sys/types.h>
@@ -22,7 +21,7 @@
 #define D(TYPE, MESSAGE, VALUE)
 #endif
 
-#define DEFAULT_PATH "/home/ubu/media"
+#define DEFAULT_PATH "/home/uba/media"
 
 namespace vniiftri
 {
@@ -34,6 +33,9 @@ namespace vniiftri
             std::stringstream dateStr;
 
             dateStr << std::put_time(std::localtime(&dateTimeNow), "%d-%m-%y_%T.");
+
+            if(dateStr << "") D("[E]", "Не удалось создать название файла скриношта. Возможно проблемы со встроенным временем!", "");
+
             std::string fileName = std::string("screenshot_") + std::string(dateStr.str()) + std::string(screenshotType);
 
             return fileName;
@@ -75,7 +77,7 @@ namespace vniiftri
 
             if (catalogsCount > 1)
             {
-                D("[W]", "Найдено более одного раздела USB накопителя.", ""); 
+                D("[I]", "Найдено более одного раздела USB накопителя.", ""); 
             }
 
             closedir(dirPath);
@@ -91,13 +93,27 @@ namespace vniiftri
                 D("[E]", "Неверный тип скриншота: ", type);
                 return -1;
             }
-
-            std::vector<std::string> catalogUsbNameVec = i_tals_findCatalogUsbName();
-            std::string fileName = i_tals_createFileName(type);
-
-            if (fileName == "")
+            
+            std::vector<std::string> catalogUsbNameVec;
+            std::string fileName;
+            
+            try
             {
-                D("[E]", "Не удалось создать название файла скриношта. Возможно проблемы со встроенным временем!", "");
+                catalogUsbNameVec = i_tals_findCatalogUsbName();
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+                return -1;
+            }
+
+            try
+            {
+                fileName = i_tals_createFileName(type);
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
                 return -1;
             }
 
@@ -105,6 +121,7 @@ namespace vniiftri
             glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
 
             FIBITMAP *image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
+            
             if (image == NULL)
             {
                 D("[E]", "Не удалось сконвертировать необработанное растровое изображение в растровое изображение!", "");
@@ -121,19 +138,20 @@ namespace vniiftri
                 strcat(pathToLoadScreenshot, catalogUsbNameVec[i].c_str());
                 strcat(pathToLoadScreenshot, charFileName);
 
-                if (!FreeImage_Save(FreeImage_GetFIFFromFilename(charFileName), image, pathToLoadScreenshot, 0))
+                try
                 {
-                    
+                    FreeImage_Save(FreeImage_GetFIFFromFilename(charFileName), image, pathToLoadScreenshot, 0);
+                    D("[I]", "Скриншот сохранен во все доступные каталоги USB", ""); 
+                }
+                catch(const std::exception& e)
+                {
                     if(catalogUsbNameVec.size() == 1) // если найден только один "запароленый" каталог и других нет
                     {
                         D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]);
-                        return -1; 
                     }
-
-                    D("[W]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]); 
+                    return -1;
                 }
 
-                FreeImage_Save(FreeImage_GetFIFFromFilename(charFileName), image, pathToLoadScreenshot, 0);
                 delete[] pathToLoadScreenshot;
             }
             
