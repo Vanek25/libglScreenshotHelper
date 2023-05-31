@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/i_tals_findCatalogUsbName_test.dir/testMain.cpp.o CMakeFiles/i_tals_findCatalogUsbName_test.dir/testFindCatalogUsbName.cpp.o -o i_tals_findCatalogUsbName_test  -lcppunit ../libglScreenshotHelper.a -lfreeimage -lGL 

@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/i_tals_create_file_name_test.dir/testMain.cpp.o CMakeFiles/i_tals_create_file_name_test.dir/testCreateFileName.cpp.o -o i_tals_create_file_name_test  -lcppunit ../libglScreenshotHelper.a -lfreeimage -lGL 
