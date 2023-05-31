@@ -1,4 +1,4 @@
-#include <GL/gl.h>
+#include "GL/gl.h"
 #include <stdio.h>
 #include <sys/types.h>
 #include <dirent.h>
@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <unistd.h>
 #include <FreeImage.h>
 #include "glScreenshotHelper.h"
 
@@ -34,7 +35,7 @@ namespace vniiftri
 
             dateStr << std::put_time(std::localtime(&dateTimeNow), "%d-%m-%y_%T.");
 
-            if(dateStr << "") D("[E]", "Не удалось создать название файла скриношта. Возможно проблемы со встроенным временем!", "");
+            if(dateStr.str() == "") D("[E]", "Не удалось создать название файла скриношта. Возможно проблемы со встроенным временем!", "");
 
             std::string fileName = std::string("screenshot_") + std::string(dateStr.str()) + std::string(screenshotType);
 
@@ -50,11 +51,13 @@ namespace vniiftri
 
             DIR *dirPath;
             struct dirent *entry;
+
             dirPath = opendir(DEFAULT_PATH);
 
             if (dirPath == NULL)
             {
                 D("[E]", "Не удалось открыть каталог куда монируется USB накопитель! Путь указывает на несуществующий каталог: ", DEFAULT_PATH);
+                return catalogNameVec;
             }
 
             while ((entry = readdir(dirPath)) != NULL)
@@ -99,7 +102,7 @@ namespace vniiftri
             
             try
             {
-                catalogUsbNameVec = i_tals_findCatalogUsbName();
+                fileName = i_tals_createFileName(type);
             }
             catch(const std::exception& e)
             {
@@ -109,7 +112,7 @@ namespace vniiftri
 
             try
             {
-                fileName = i_tals_createFileName(type);
+                catalogUsbNameVec = i_tals_findCatalogUsbName();
             }
             catch(const std::exception& e)
             {
@@ -120,15 +123,19 @@ namespace vniiftri
             BYTE *pixels = new BYTE[3 * width * height];
             glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
 
-            FIBITMAP *image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
-            
-            if (image == NULL)
+            FIBITMAP *image; 
+
+            try
+            {
+                image = FreeImage_ConvertFromRawBits(pixels, width, height, 3 * width, 24, 0x0000FF, 0xFF0000, 0x00FF00, false);
+            }
+            catch(const std::exception& e)
             {
                 D("[E]", "Не удалось сконвертировать необработанное растровое изображение в растровое изображение!", "");
-                return -1; 
+                return -1;
             }
 
-            char * charFileName = fileName.data();
+            char *charFileName = fileName.data();
 
             for(std::vector<int>::size_type i = 0; i < catalogUsbNameVec.size(); i++)
             {
@@ -141,11 +148,11 @@ namespace vniiftri
                 try
                 {
                     FreeImage_Save(FreeImage_GetFIFFromFilename(charFileName), image, pathToLoadScreenshot, 0);
-                    D("[I]", "Скриншот сохранен во все доступные каталоги USB", ""); 
+                    D("[I]", "Скриншот сохранен в каталог: ", catalogUsbNameVec[i]); 
                 }
                 catch(const std::exception& e)
                 {
-                    if(catalogUsbNameVec.size() == 1) // если найден только один "запароленый" каталог и других нет
+                    if(catalogUsbNameVec.size() == 1) // если найден только один "запароленный" каталог и других нет
                     {
                         D("[E]", "Не удалось сохранить скриншот! Недостаточно прав для сохранения в каталог ", catalogUsbNameVec[i]);
                     }
@@ -156,7 +163,7 @@ namespace vniiftri
             }
             
             FreeImage_Unload(image);
-
+            
             delete[] pixels;
 
             return 0; 

@@ -6,12 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
-add_library(glScreenshotHelper_static STATIC src/glScreenshotHelper.cpp include/glScreenshotHelper.h)
-
-find_package(
-    glfw3 3.3 REQUIRED
-    OpenGL REQUIRED
-)
+add_library(glScreenshotHelper STATIC src/glScreenshotHelper.cpp include/glScreenshotHelper.h)
 
 find_library(
     LIB_freeimage freeimage

@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/testMain.cpp.o CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir/testTakeAndLoadScreenshot.cpp.o -o i_tals_takeAndLoadScreenshot_test  -lcppunit ../libglScreenshotHelper.a -lfreeimage -lGL 
