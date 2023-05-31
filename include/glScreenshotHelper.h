@@ -11,9 +11,9 @@ namespace vniiftri
         class ScreenshotHelper
         {
             public:
-                static char *i_tals_createFileName(const char *type);
+                static std::string i_tals_createFileName(const std::string type);
                 static std::vector<std::string> i_tals_findCatalogUsbName();
-                static void i_tals_takeAndLoadScreenshot(const char *type, int width, int height);
+                static int i_tals_takeAndLoadScreenshot(const char *type, int width, int height);
         };
     }
 }

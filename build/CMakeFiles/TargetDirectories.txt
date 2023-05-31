@@ -1,0 +1,10 @@
+/home/uba/projects/libglScreenshotHelper/build/CMakeFiles/glScreenshotHelper.dir
+/home/uba/projects/libglScreenshotHelper/build/CMakeFiles/test.dir
+/home/uba/projects/libglScreenshotHelper/build/CMakeFiles/edit_cache.dir
+/home/uba/projects/libglScreenshotHelper/build/CMakeFiles/rebuild_cache.dir
+/home/uba/projects/libglScreenshotHelper/build/tests/CMakeFiles/i_tals_takeAndLoadScreenshot_test.dir
+/home/uba/projects/libglScreenshotHelper/build/tests/CMakeFiles/i_tals_findCatalogUsbName_test.dir
+/home/uba/projects/libglScreenshotHelper/build/tests/CMakeFiles/i_tals_create_file_name_test.dir
+/home/uba/projects/libglScreenshotHelper/build/tests/CMakeFiles/test.dir
+/home/uba/projects/libglScreenshotHelper/build/tests/CMakeFiles/edit_cache.dir
+/home/uba/projects/libglScreenshotHelper/build/tests/CMakeFiles/rebuild_cache.dir
