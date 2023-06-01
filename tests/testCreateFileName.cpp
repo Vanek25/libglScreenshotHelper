@@ -17,31 +17,44 @@ namespace vniiftri
 
         void TestCreateFileName::test_i_tals_createFileName()
         {
-            /*  Сравнение названий файла со временем  */
-            int delaySec = 3;
             std::time_t t = std::time(nullptr);
             std::tm* now = std::localtime(&t);
-            std::string fileName = std::string("screenshot_29-05-23_") + std::to_string(now->tm_hour) + ":" + std::to_string(now->tm_min) + ":" + std::to_string(now->tm_sec) + (".jpg");
+
+            std::string hour, minute, second;
+            
+            // Добавление 0 ко времени, если число меньше 10и
+            now->tm_hour < 10 ? hour = "0" + std::to_string(now->tm_hour) : hour = std::to_string(now->tm_hour);
+            now->tm_min < 10 ? minute = "0" + std::to_string(now->tm_min) : minute = std::to_string(now->tm_min);
+            now->tm_sec < 10 ? second = "0" + std::to_string(now->tm_sec) : second = std::to_string(now->tm_sec);
+
+            /*  Сравнение названий файла со временем  */
+            int delaySec = 3;
+            
+            std::string fileName = std::string("screenshot_01-06-23_") + hour + ":" + minute + ":" + second + (".jpg");
 
             CPPUNIT_ASSERT_EQUAL(fileName, ScreenshotHelper::i_tals_createFileName("jpg"));
 
             sleep(delaySec);
-            fileName = std::string("screenshot_29-05-23_") + std::to_string(now->tm_hour) + ":" + std::to_string(now->tm_min) + ":" + std::to_string(now->tm_sec + delaySec) + (".jpg");
+
+            now->tm_sec += delaySec;
+            now->tm_sec < 10 ? second = "0" + std::to_string(now->tm_sec) : second = std::to_string(now->tm_sec);
+
+            fileName = std::string("screenshot_01-06-23_") + hour + ":" + minute + ":" + second + (".jpg");
 
             CPPUNIT_ASSERT_EQUAL(fileName, ScreenshotHelper::i_tals_createFileName("jpg"));
 
             /*   Сравнение названий файла без времени   */
-            fileName = "screenshot_29-05-23.jpg";
+            fileName = "screenshot_01-06-23.jpg";
             std::string fileNameFromLib = ScreenshotHelper::i_tals_createFileName("jpg").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);
 
-            fileName = "screenshot_29-05-23.png";
+            fileName = "screenshot_01-06-23.png";
             fileNameFromLib = ScreenshotHelper::i_tals_createFileName("png").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);
 
-            fileName = "screenshot_29-05-23.bmp";
+            fileName = "screenshot_01-06-23.bmp";
             fileNameFromLib = ScreenshotHelper::i_tals_createFileName("bmp").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);

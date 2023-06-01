@@ -1,4 +1,3 @@
-#include "GL/gl.h"
 #include <stdio.h>
 #include <sys/types.h>
 #include <dirent.h>
@@ -13,6 +12,7 @@
 #include <unistd.h>
 #include <FreeImage.h>
 #include "glScreenshotHelper.h"
+#include "glad/gl.h"
 
 #define VNIIFTRI_DEBUG
 
@@ -120,9 +120,9 @@ namespace vniiftri
                 return -1;
             }
 
-            BYTE *pixels = new BYTE[3 * width * height];
+            uint8_t* pixels = new uint8_t[width * height * 3];
             glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
-
+            
             FIBITMAP *image; 
 
             try
