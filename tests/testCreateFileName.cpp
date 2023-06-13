@@ -3,7 +3,7 @@
 #include <ctime>
 #include <unistd.h>
 #include "testCreateFileName.h"
-#include "glScreenshotHelper.h"
+#include "../include/glScreenshotHelper.h"
 
 namespace vniiftri
 {
@@ -30,7 +30,7 @@ namespace vniiftri
             /*  Сравнение названий файла со временем  */
             int delaySec = 3;
             
-            std::string fileName = std::string("screenshot_01-06-23_") + hour + ":" + minute + ":" + second + (".jpg");
+            std::string fileName = std::string("screenshot_13-06-23_") + hour + ":" + minute + ":" + second + (".jpg");
 
             CPPUNIT_ASSERT_EQUAL(fileName, ScreenshotHelper::i_tals_createFileName("jpg"));
 
@@ -39,22 +39,22 @@ namespace vniiftri
             now->tm_sec += delaySec;
             now->tm_sec < 10 ? second = "0" + std::to_string(now->tm_sec) : second = std::to_string(now->tm_sec);
 
-            fileName = std::string("screenshot_01-06-23_") + hour + ":" + minute + ":" + second + (".jpg");
+            fileName = std::string("screenshot_13-06-23_") + hour + ":" + minute + ":" + second + (".jpg");
 
             CPPUNIT_ASSERT_EQUAL(fileName, ScreenshotHelper::i_tals_createFileName("jpg"));
 
             /*   Сравнение названий файла без времени   */
-            fileName = "screenshot_01-06-23.jpg";
+            fileName = "screenshot_13-06-23.jpg";
             std::string fileNameFromLib = ScreenshotHelper::i_tals_createFileName("jpg").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);
 
-            fileName = "screenshot_01-06-23.png";
+            fileName = "screenshot_13-06-23.png";
             fileNameFromLib = ScreenshotHelper::i_tals_createFileName("png").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);
 
-            fileName = "screenshot_01-06-23.bmp";
+            fileName = "screenshot_13-06-23.bmp";
             fileNameFromLib = ScreenshotHelper::i_tals_createFileName("bmp").erase(19, 9);
             
             CPPUNIT_ASSERT_EQUAL(fileNameFromLib, fileName);

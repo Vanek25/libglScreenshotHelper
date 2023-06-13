@@ -1,5 +1,5 @@
 #include "testTakeAndLoadScreenshot.h"
-#include "glScreenshotHelper.h"
+#include "../include/glScreenshotHelper.h"
 
 namespace vniiftri
 {

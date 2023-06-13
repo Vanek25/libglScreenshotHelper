@@ -1,6 +1,6 @@
 #include <vector>
 #include "testFindCatalogUsbName.h"
-#include "glScreenshotHelper.h"
+#include "../include/glScreenshotHelper.h"
 
 namespace vniiftri
 {

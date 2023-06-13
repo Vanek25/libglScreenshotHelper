@@ -10,11 +10,10 @@
 #include <iostream>
 #include <vector>
 #include <unistd.h>
+#include <filesystem>
 #include <FreeImage.h>
 #include "glScreenshotHelper.h"
 #include "glad/gl.h"
-
-#define VNIIFTRI_DEBUG
 
 #ifdef VNIIFTRI_DEBUG
 #define D(TYPE, MESSAGE, VALUE) std::cerr<< TYPE << " I_TALS: " << MESSAGE << VALUE << std::endl
@@ -22,12 +21,43 @@
 #define D(TYPE, MESSAGE, VALUE)
 #endif
 
-#define DEFAULT_PATH "/home/uba/media"
-
 namespace vniiftri
 {
     namespace oscilloscope_gui
     {
+        bool ScreenshotHelper::i_tals_isEnoughSpace(const char *pathToCatalog, const char *screenshotType)
+        {
+            std::string fullPath = DEFAULT_PATH;
+            fullPath.append(pathToCatalog);
+
+            std::filesystem::space_info tmp = std::filesystem::space(fullPath);
+            
+            if(tmp.free < 15000000 && screenshotType == "bmp") // если меньше 15 Мбайт на флешке
+                return false; 
+
+            if(tmp.free < 1000000 && screenshotType == "png") // если меньше 1 Мбайт на флешке
+                return false;
+            
+            if(tmp.free < 1000000 && screenshotType == "jpg")
+                return false;
+
+            return true;
+        }
+
+        std::vector<std::string> ScreenshotHelper::i_tals_checkFreeSpace(std::vector<std::string> catalogUsbNames, const char *screenshotType)
+        {
+            std::vector<std::string> availableCatalogs;
+            for(int i = 0; i < catalogUsbNames.size(); i++)
+            {
+                if(i_tals_isEnoughSpace(catalogUsbNames[i].c_str(), screenshotType) == true) // вызов функции, проверяющией свободное место в каталоге(ах) накопителя
+                {
+                    availableCatalogs.push_back(catalogUsbNames[i]);
+                }
+            }
+
+            return availableCatalogs;
+        }
+
         std::string ScreenshotHelper::i_tals_createFileName(const std::string screenshotType)
         {
             std::time_t dateTimeNow = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
@@ -102,7 +132,7 @@ namespace vniiftri
             
             try
             {
-                fileName = i_tals_createFileName(type);
+                catalogUsbNameVec = i_tals_checkFreeSpace(i_tals_findCatalogUsbName(), type); // вызов функции на проверку 
             }
             catch(const std::exception& e)
             {
@@ -112,7 +142,7 @@ namespace vniiftri
 
             try
             {
-                catalogUsbNameVec = i_tals_findCatalogUsbName();
+                fileName = i_tals_createFileName(type);
             }
             catch(const std::exception& e)
             {
@@ -120,6 +150,12 @@ namespace vniiftri
                 return -1;
             }
 
+            if(catalogUsbNameVec.empty())
+            {
+                D("[E]", "Недостаточно места для сохранения скриншота! Вставьте другой USB-накопитель.", "");
+                return -1;
+            }
+               
             uint8_t* pixels = new uint8_t[width * height * 3];
             glReadPixels(0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, pixels);
             
@@ -136,6 +172,7 @@ namespace vniiftri
             }
 
             char *charFileName = fileName.data();
+            int countCtlgNotEnoghSpace = 0;
 
             for(std::vector<int>::size_type i = 0; i < catalogUsbNameVec.size(); i++)
             {
